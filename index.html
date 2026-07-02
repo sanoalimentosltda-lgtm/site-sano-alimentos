@@ -5,45 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sano Alimentos | Tradição desde 1989</title>
   <meta name="description" content="Grupo Sano Alimentos - Suinocultura, Bovinocultura, Agricultura e Distribuição de Carnes. Tradição e qualidade desde 1989 em Patos de Minas - MG." />
-  <script src="https://cdn.tailwindcss.com">
-  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            sano: {
-              50: '#f0f7f1',
-              100: '#d9ebdc',
-              200: '#b5d7bc',
-              300: '#85bb92',
-              400: '#569b68',
-              500: '#2d5a3d',
-              600: '#1e3d29',
-              700: '#142b1c',
-              800: '#0d1d13',
-              900: '#060f0a',
-            },
-            earth: {
-              50: '#f8f6f3',
-              100: '#ede7de',
-              200: '#d9cebc',
-              300: '#c5b096',
-              400: '#b09270',
-              500: '#8B6F47',
-              600: '#6B4F2E',
-              700: '#5c3d2e',
-              800: '#4a3124',
-              900: '#3a261b',
-            },
-            gold: {
-              400: '#C9A84C',
-              500: '#b8943a',
-            }
+            sano: { 50: '#f0f7f1', 100: '#d9ebdc', 200: '#b5d7bc', 300: '#85bb92', 400: '#569b68', 500: '#2d5a3d', 600: '#1e3d29', 700: '#142b1c', 800: '#0d1d13', 900: '#060f0a' },
+            earth: { 50: '#f8f6f3', 100: '#ede7de', 200: '#d9cebc', 300: '#c5b096', 400: '#b09270', 500: '#8B6F47', 600: '#6B4F2E', 700: '#5c3d2e', 800: '#4a3124', 900: '#3a261b' },
+            gold: { 400: '#C9A84C', 500: '#b8943a' }
           },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-          },
+          fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] }
         }
       }
     }
@@ -53,45 +25,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     html { scroll-behavior: smooth; }
-    .header-scrolled { @apply bg-white/95 backdrop-blur-md shadow-lg; border-bottom: 1px solid rgba(45, 90, 61, 0.1); }
-    .header-scrolled .nav-links a { @apply text-sano-700; }
+    .header-scrolled { @apply bg-white/95 backdrop-blur-md shadow-lg; border-bottom: 1px solid rgba(45,90,61,0.1); }
     .header-scrolled .logo-text { @apply text-sano-600; }
-    .hero-overlay {
-      background: linear-gradient(
-        135deg,
-        rgba(20, 43, 28, 0.85) 0%,
-        rgba(45, 90, 61, 0.7) 50%,
-        rgba(20, 43, 28, 0.6) 100%
-      );
-    }
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .hero-overlay { background: linear-gradient(135deg, rgba(20,43,28,0.85) 0%, rgba(45,90,61,0.7) 50%, rgba(20,43,28,0.6) 100%); }
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
-    .card-hover { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 60px -15px rgba(45, 90, 61, 0.3); }
+    .card-hover { transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 60px -15px rgba(45,90,61,0.3); }
     .unit-card { position: relative; overflow: hidden; border-radius: 1rem; cursor: pointer; }
-    .unit-card img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .unit-card img { transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
     .unit-card:hover img { transform: scale(1.08); }
-    .unit-card .unit-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(20, 43, 28, 0.92) 0%, rgba(20, 43, 28, 0.4) 50%, rgba(20, 43, 28, 0.1) 100%);
-      transition: opacity 0.4s ease;
-    }
+    .unit-card .unit-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,43,28,0.92) 0%, rgba(20,43,28,0.4) 50%, rgba(20,43,28,0.1) 100%); transition: opacity 0.4s ease; }
     .stat-number { @apply font-bold text-4xl md:text-5xl text-gold-400; }
     .mobile-menu-open { max-height: 100vh !important; opacity: 1 !important; visibility: visible !important; }
     .form-input { @apply w-full px-4 py-3 border border-earth-200 rounded-lg bg-white text-sano-800 placeholder-earth-400 focus:outline-none focus:ring-2 focus:ring-sano-400 focus:border-transparent transition-all duration-300; }
     .section-divider { height: 4px; width: 60px; background: linear-gradient(90deg, #2d5a3d, #C9A84C); border-radius: 2px; margin: 1rem auto 1.5rem; }
-    .btn-primary { @apply inline-flex items-center gap-2 px-8 py-3.5 bg-sano-500 text-white font-semibold rounded-lg hover:bg-sano-600 focus:ring-2 focus:ring-sano-400 focus:ring-offset-2 transition-all duration-300; box-shadow: 0 4px 14px rgba(45, 90, 61, 0.3); }
-    .btn-primary:hover { box-shadow: 0 6px 20px rgba(45, 90, 61, 0.4); transform: translateY(-2px); }
+    .btn-primary { @apply inline-flex items-center gap-2 px-8 py-3.5 bg-sano-500 text-white font-semibold rounded-lg hover:bg-sano-600 focus:ring-2 focus:ring-sano-400 focus:ring-offset-2 transition-all duration-300; box-shadow: 0 4px 14px rgba(45,90,61,0.3); }
+    .btn-primary:hover { box-shadow: 0 6px 20px rgba(45,90,61,0.4); transform: translateY(-2px); }
     .btn-outline { @apply inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white/60 text-white font-semibold rounded-lg hover:bg-white hover:text-sano-600 focus:ring-2 focus:ring-white/50 transition-all duration-300; }
     .nav-link { position: relative; }
-    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #2d5a3d; transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #2d5a3d; transition: width 0.3s cubic-bezier(0.16,1,0.3,1); }
     .nav-link:hover::after { width: 100%; }
     .highlight-quote { @apply italic text-lg md:text-xl text-sano-700 font-light leading-relaxed; border-left: 4px solid #C9A84C; @apply pl-6; }
-    @media (max-width: 768px) { .hero-title { font-size: 2.25rem !important; line-height: 1.2 !important; } }
+    @media (max-width:768px) { .hero-title { font-size: 2.25rem !important; line-height: 1.2 !important; } }
     .deco-circle { position: absolute; border-radius: 50%; opacity: 0.06; pointer-events: none; }
   </style>
 </head>
@@ -102,39 +62,29 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
         <a href="#hero" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-sano-500 flex items-center justify-center group-hover:bg-sano-600 transition-colors duration-300">
-            <svg class="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          </div>
-          <div>
-            <span class="logo-text text-lg md:text-xl font-bold text-white transition-colors duration-300">SANO</span>
-            <span class="block text-[10px] md:text-xs font-medium text-gold-400 tracking-widest uppercase -mt-1">Alimentos</span>
-          </div>
+          <!-- TROQUE AQUI: Logo oficial da Sano -->
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-SLToWslbVB-2Y8ACLgHMOXKRtgboRyfe7VlEuok-oH22z3zbLXyfbi-M_UpSn8u00mG9dxpK5DWQ3FCN-0hGlBvkVNE4umhsQ-WOaUCk0yo1dTwROUBEspOBBpyqbdgTwtWK0EDNQLjD/s1094/aaaaaaaaaa.png" 
+               alt="Sano Alimentos" class="h-10 md:h-12 w-auto" />
         </a>
         <nav class="hidden md:flex items-center gap-8">
-          <a href="#hero" class="nav-link text-sm font-medium text-white/90 hover:text-white transition-colors duration-300">Início</a>
-          <a href="#sobre" class="nav-link text-sm font-medium text-white/90 hover:text-white transition-colors duration-300">Quem Somos</a>
-          <a href="#atuacao" class="nav-link text-sm font-medium text-white/90 hover:text-white transition-colors duration-300">Atuação</a>
-          <a href="#unidades" class="nav-link text-sm font-medium text-white/90 hover:text-white transition-colors duration-300">Unidades</a>
+          <a href="#hero" class="nav-link text-sm font-medium text-white/90 hover:text-white">Início</a>
+          <a href="#sobre" class="nav-link text-sm font-medium text-white/90 hover:text-white">Quem Somos</a>
+          <a href="#atuacao" class="nav-link text-sm font-medium text-white/90 hover:text-white">Atuação</a>
+          <a href="#unidades" class="nav-link text-sm font-medium text-white/90 hover:text-white">Unidades</a>
           <a href="#contato" class="px-5 py-2 bg-gold-400 text-sano-800 text-sm font-semibold rounded-lg hover:bg-gold-500 transition-all duration-300">Contato</a>
         </nav>
-        <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-white hover:bg-white/10 transition-colors duration-300" aria-label="Abrir menu" aria-expanded="false">
-          <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+        <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-white hover:bg-white/10" aria-label="Abrir menu" aria-expanded="false">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
     </div>
-    <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 opacity-0 invisible transition-all duration-500 ease-in-out bg-sano-700/98 backdrop-blur-md">
+    <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 opacity-0 invisible transition-all duration-500 bg-sano-700/98 backdrop-blur-md">
       <nav class="px-4 py-6 space-y-1">
-        <a href="#hero" class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200">Início</a>
-        <a href="#sobre" class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200">Quem Somos</a>
-        <a href="#atuacao" class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200">Atuação</a>
-        <a href="#unidades" class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200">Unidades</a>
+        <a href="#hero" class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:text-white hover:bg-white/10">Início</a>
+        <a href="#sobre" class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:text-white hover:bg-white/10">Quem Somos</a>
+        <a href="#atuacao" class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:text-white hover:bg-white/10">Atuação</a>
+        <a href="#unidades" class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:text-white hover:bg-white/10">Unidades</a>
         <a href="#contato" class="block px-4 py-3 mt-2 bg-gold-400 text-sano-800 font-semibold rounded-lg text-center">Contato</a>
       </nav>
     </div>
@@ -143,25 +93,24 @@
   <!-- HERO -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
-      <!-- SUBSTITUA AQUI: URL da imagem de fundo do hero -->
       <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80" alt="Paisagem rural Sano Alimentos" class="w-full h-full object-cover" loading="eager" />
       <div class="hero-overlay absolute inset-0"></div>
     </div>
-    <div class="deco-circle w-96 h-96 bg-gold-400 top-20 -left-20"></div>
-    <div class="deco-circle w-64 h-64 bg-white bottom-20 right-10"></div>
     <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
       <div class="reveal visible">
         <span class="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-gold-400 text-xs font-semibold tracking-widest uppercase rounded-full mb-6">Tradição desde 1989</span>
       </div>
       <h1 class="hero-title text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 reveal visible reveal-delay-1">Qualidade que vem<br/><span class="text-gold-400">do campo</span></h1>
-      <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 font-light reveal visible reveal-delay-2">Há mais de 35 anos, o Grupo Sano Alimentos une tradição, inovação e sustentabilidade para levar o melhor da carne à sua mesa.</p>
+      <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-10 font-light reveal visible reveal-delay-2">
+        Há mais de 35 anos, o Grupo Sano Alimentos une tradição e inovação — da produção de insumos 
+        à distribuição de carnes — gerando cerca de <strong class="text-white">80 empregos diretos</strong> 
+        e movimentando uma frota de <strong class="text-white">16 caminhões</strong>.
+      </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal visible reveal-delay-3">
         <a href="#sobre" class="btn-primary">Nossa História <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></a>
-        <a href="#contato" class="btn-outline">Fale Conosco <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></a>
+        <a href="#contato" class="btn-outline">Fale Conosco <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></a>
       </div>
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg class="w-6 h-6 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><svg class="w-6 h-6 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div>
     </div>
   </section>
 
@@ -175,7 +124,6 @@
       </div>
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="reveal reveal-delay-1 relative">
-          <!-- SUBSTITUA AQUI: imagem da empresa/fazenda -->
           <img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?w=800&q=80" alt="Fazenda Sano Alimentos" class="w-full h-80 md:h-96 object-cover rounded-2xl shadow-2xl" loading="lazy" />
           <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gold-400/20 rounded-2xl -z-10"></div>
           <div class="absolute -top-4 -left-4 w-24 h-24 bg-sano-100 rounded-2xl -z-10"></div>
@@ -185,38 +133,50 @@
           </div>
         </div>
         <div class="reveal reveal-delay-2 space-y-6">
-          <p class="text-lg text-sano-600 leading-relaxed">Fundado em <strong class="text-sano-500">1989</strong> por <strong class="text-sano-500">Saulo de Deus Vieira</strong> e <strong class="text-sano-500">Valder Caixeta dos Santos</strong>, o Grupo Sano Alimentos nasceu com a <strong class="text-sano-500">Granja Abelhas</strong>, iniciando sua trajetória na suinocultura com dedicação e visão empreendedora.</p>
-          <p class="text-earth-600 leading-relaxed">Ao longo de mais de três décadas, expandimos nossas operações de forma sustentável, adquirindo novas unidades — como a Granja Patinhas, Granja Esperança e Granja Diamante — e ingressando na bovinocultura de corte com a aquisição da Fazenda Ribeirão da Mata em 2009.</p>
+          <p class="text-lg text-sano-600 leading-relaxed">Fundado em <strong class="text-sano-500">1989</strong> por <strong class="text-sano-500">Saulo de Deus Vieira</strong> e <strong class="text-sano-500">Valder Caixeta dos Santos</strong>, o Grupo Sano Alimentos nasceu com a <strong class="text-sano-500">Granja Abelhas</strong> — uma pequena granja suinícola com 50 matrizes em 20 hectares.</p>
+          <p class="text-earth-600 leading-relaxed">Em <strong>1997</strong>, para atender à determinação legal, foi criada a <strong>SANO ALIMENTOS LTDA</strong>, que passou a atuar no comércio atacadista de carcaças suínas e bovinas, atendendo varejistas do ramo de açougues na cidade e região.</p>
+          <p class="text-earth-600 leading-relaxed">Expandimos com as Granjas Patinhas, Esperança (2002), Diamante (2015) e a Fazenda Ribeirão da Mata (2009). Em <strong>2014</strong>, prospectando o futuro, adquirimos um imóvel de <strong>8.000 m² no Distrito Industrial III</strong> em Patos de Minas, onde planejamos implantar câmaras frias e uma indústria de carnes e derivados.</p>
           <blockquote class="highlight-quote text-earth-500">"Nossa essência é acreditar que a qualidade começa na origem: no cuidado com a terra, na alimentação dos animais e no respeito às pessoas."</blockquote>
-          <p class="text-earth-600 leading-relaxed">Hoje, somos referência em <strong>suinocultura</strong> (com cerca de 1.500 matrizes e 25.000 animais em crescimento), <strong>bovinocultura de corte</strong>, <strong>agricultura</strong> em mais de 700 hectares e <strong>distribuição de carnes</strong> de qualidade desde 2001.</p>
-          <div class="grid grid-cols-3 gap-6 pt-4">
-            <div><span class="stat-number text-3xl md:text-4xl">35+</span><span class="block text-xs text-earth-500 font-medium mt-1">Anos de História</span></div>
-            <div><span class="stat-number text-3xl md:text-4xl">1.5K</span><span class="block text-xs text-earth-500 font-medium mt-1">Matrizes Suínas</span></div>
-            <div><span class="stat-number text-3xl md:text-4xl">700+</span><span class="block text-xs text-earth-500 font-medium mt-1">Hectares de Lavoura</span></div>
+          <p class="text-earth-600 leading-relaxed">Hoje geramos cerca de <strong>80 empregos diretos</strong>, contamos com uma frota de <strong>16 caminhões</strong> (baús frigoríficos, transporte de animais vivos e máquinas agrícolas) e somos referência em suinocultura, bovinocultura, agricultura e distribuição de carnes.</p>
+          <div class="grid grid-cols-4 gap-4 pt-4">
+            <div><span class="stat-number text-2xl md:text-3xl">35+</span><span class="block text-xs text-earth-500 font-medium mt-1">Anos</span></div>
+            <div><span class="stat-number text-2xl md:text-3xl">80</span><span class="block text-xs text-earth-500 font-medium mt-1">Empregos</span></div>
+            <div><span class="stat-number text-2xl md:text-3xl">16</span><span class="block text-xs text-earth-500 font-medium mt-1">Caminhões</span></div>
+            <div><span class="stat-number text-2xl md:text-3xl">5K</span><span class="block text-xs text-earth-500 font-medium mt-1">Animais/ano</span></div>
           </div>
         </div>
       </div>
+
+      <!-- Video Institucional -->
+      <div class="mt-20 reveal text-center">
+        <h3 class="text-2xl font-bold text-sano-700 mb-6">Vídeo Institucional</h3>
+        <div class="max-w-2xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FzdzpJC8sHA" frameborder="0" allowfullscreen class="w-full h-full" title="Vídeo Institucional Sano Alimentos"></iframe>
+        </div>
+      </div>
+
+      <!-- Valores -->
       <div class="grid md:grid-cols-3 gap-8 mt-20">
         <div class="reveal reveal-delay-1 bg-earth-50 rounded-2xl p-8 card-hover border border-earth-100">
           <div class="w-14 h-14 bg-sano-100 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-7 h-7 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
           </div>
           <h3 class="text-xl font-bold text-sano-600 mb-3">Qualidade</h3>
-          <p class="text-earth-600 leading-relaxed">Da ração produzida em nossas lavouras ao manejo dos animais, cada etapa é pensada para garantir a excelência do produto final.</p>
+          <p class="text-earth-600">Da ração produzida em nossas lavouras ao manejo dos animais, cada etapa é pensada para garantir a excelência do produto final.</p>
         </div>
         <div class="reveal reveal-delay-2 bg-earth-50 rounded-2xl p-8 card-hover border border-earth-100">
           <div class="w-14 h-14 bg-sano-100 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-7 h-7 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
           </div>
           <h3 class="text-xl font-bold text-sano-600 mb-3">Sustentabilidade</h3>
-          <p class="text-earth-600 leading-relaxed">Compromisso com práticas que respeitam o meio ambiente, promovem o bem-estar animal e garantem a sustentabilidade do negócio.</p>
+          <p class="text-earth-600">Compromisso com práticas que respeitam o meio ambiente, promovem o bem-estar animal e garantem a sustentabilidade do negócio.</p>
         </div>
         <div class="reveal reveal-delay-3 bg-earth-50 rounded-2xl p-8 card-hover border border-earth-100">
           <div class="w-14 h-14 bg-sano-100 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-7 h-7 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
           </div>
           <h3 class="text-xl font-bold text-sano-600 mb-3">Compromisso Social</h3>
-          <p class="text-earth-600 leading-relaxed">Valorização das pessoas, geração de empregos na região e contribuição para o desenvolvimento do agronegócio mineiro.</p>
+          <p class="text-earth-600">Cerca de 80 empregos diretos, valorização das pessoas e contribuição ativa para o desenvolvimento do agronegócio mineiro.</p>
         </div>
       </div>
     </div>
@@ -232,6 +192,8 @@
         <p class="text-earth-600 max-w-2xl mx-auto">Da produção de insumos à distribuição de carnes, cada elo da nossa cadeia é cuidadosamente gerenciado.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Agricultura -->
         <div class="reveal reveal-delay-1 bg-white rounded-2xl overflow-hidden card-hover border border-sano-100 group">
           <div class="h-52 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80" alt="Lavouras Sano Alimentos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
@@ -241,14 +203,22 @@
               <svg class="w-6 h-6 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
             </div>
             <h3 class="text-2xl font-bold text-sano-600 mb-3">Agricultura</h3>
-            <p class="text-earth-600 mb-5 leading-relaxed">Produzimos nossos próprios insumos agrícolas em mais de <strong class="text-sano-500">700 hectares</strong> de lavouras, garantindo autossuficiência na alimentação animal.</p>
+            <p class="text-earth-600 mb-5 leading-relaxed">
+              Produzimos parte dos insumos básicos em aproximadamente 
+              <strong class="text-sano-500">700 hectares</strong> de lavouras em áreas arrendadas. 
+              Utilizamos <strong>agricultura de precisão</strong> e temos parque próprio de máquinas 
+              e implementos — do preparo do solo à colheita — sem depender de terceiros.
+            </p>
             <ul class="space-y-2 text-sm text-earth-500">
               <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Milho, soja e outros grãos</li>
               <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Produção de ração própria</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Sustentabilidade e rotação de culturas</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Agricultura de precisão</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Parque de máquinas próprio</li>
             </ul>
           </div>
         </div>
+
+        <!-- Suinocultura -->
         <div class="reveal reveal-delay-2 bg-white rounded-2xl overflow-hidden card-hover border border-sano-100 group">
           <div class="h-52 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80" alt="Suinocultura Sano Alimentos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
@@ -258,14 +228,21 @@
               <svg class="w-6 h-6 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125V9M7.5 12h.75M12 12h.75M16.5 12h.75m-6 3.75h.75m3 0h.75M12 15.75h.75M7.5 18.75h3m3 0h3"/></svg>
             </div>
             <h3 class="text-2xl font-bold text-sano-600 mb-3">Suinocultura</h3>
-            <p class="text-earth-600 mb-5 leading-relaxed">Nossa principal atividade, com cerca de <strong class="text-sano-500">1.500 matrizes</strong> e <strong class="text-sano-500">25.000 animais</strong> em fase de crescimento.</p>
+            <p class="text-earth-600 mb-5 leading-relaxed">
+              Nossa principal atividade, espalhada por 4 granjas: 
+              <strong>Abelhas</strong> (~620 matrizes), <strong>Patinhas</strong> (4.300 em terminação), 
+              <strong>Esperança</strong> (650 matrizes e 10.000 animais) e 
+              <strong>Diamante</strong> (330 matrizes e 3.500 animais).
+            </p>
             <ul class="space-y-2 text-sm text-earth-500">
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Matrizes de alta genética</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Bem-estar animal</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Ração produzida nas próprias lavouras</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Aprox. 1.600 matrizes no total</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> 25.000+ animais em crescimento</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Ração das próprias lavouras</li>
             </ul>
           </div>
         </div>
+
+        <!-- Bovinocultura -->
         <div class="reveal reveal-delay-3 bg-white rounded-2xl overflow-hidden card-hover border border-sano-100 group">
           <div class="h-52 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=600&q=80" alt="Bovinocultura Sano Alimentos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
@@ -275,11 +252,16 @@
               <svg class="w-6 h-6 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
             </div>
             <h3 class="text-2xl font-bold text-sano-600 mb-3">Bovinocultura & Distribuição</h3>
-            <p class="text-earth-600 mb-5 leading-relaxed">Desde 2009 na <strong class="text-sano-500">Fazenda Ribeirão da Mata</strong>, atuamos no confinamento e pastagem de corte. Desde 2001, distribuímos carnes de qualidade.</p>
+            <p class="text-earth-600 mb-5 leading-relaxed">
+              Mantemos um plantel de <strong>800 a 1.000 reses</strong> em aproximadamente 
+              <strong>600 hectares</strong> arrendados. Comercializamos cerca de 
+              <strong>5.000 animais/ano</strong>, adquiridos sob avaliação prévia e terminados 
+              em regime fechado quando necessário. Distribuímos carnes desde 2001.
+            </p>
             <ul class="space-y-2 text-sm text-earth-500">
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Confinamento e pastagem de corte</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Distribuição de carnes desde 2001</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Padrão de qualidade Sano</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Confinamento na Faz. Ribeirão da Mata</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> 5.000 animais comercializados/ano</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sano-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Distribuição em 16 caminhões</li>
             </ul>
           </div>
         </div>
@@ -296,67 +278,144 @@
         <div class="section-divider"></div>
         <p class="text-earth-600 max-w-2xl mx-auto">Conheça as unidades que compõem o Grupo Sano Alimentos.</p>
       </div>
+
+      <!-- Timeline -->
+      <div class="relative mb-16 reveal">
+        <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-sano-200 hidden md:block"></div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="reveal reveal-delay-1 md:text-right md:pr-12 relative">
+            <div class="timeline-dot hidden md:block" style="width:16px;height:16px;background:#2d5a3d;border:3px solid #C9A84C;border-radius:50%;position:absolute;right:-8px;top:4px;z-index:2;"></div>
+            <span class="text-gold-400 font-bold text-sm">1989</span>
+            <h4 class="text-xl font-bold text-sano-600">Granja Abelhas</h4>
+            <p class="text-earth-500">Fundação com 50 matrizes em 20 hectares.</p>
+          </div>
+          <div class="hidden md:block"></div>
+          <div class="hidden md:block"></div>
+          <div class="reveal reveal-delay-2 md:pl-12 relative">
+            <div class="timeline-dot hidden md:block" style="width:16px;height:16px;background:#2d5a3d;border:3px solid #C9A84C;border-radius:50%;position:absolute;left:-8px;top:4px;z-index:2;"></div>
+            <span class="text-gold-400 font-bold text-sm">1997</span>
+            <h4 class="text-xl font-bold text-sano-600">Sano Alimentos LTDA</h4>
+            <p class="text-earth-500">Criação da empresa de comércio atacadista de carcaças.</p>
+          </div>
+          <div class="reveal reveal-delay-3 md:text-right md:pr-12 relative">
+            <div class="timeline-dot hidden md:block" style="width:16px;height:16px;background:#2d5a3d;border:3px solid #C9A84C;border-radius:50%;position:absolute;right:-8px;top:4px;z-index:2;"></div>
+            <span class="text-gold-400 font-bold text-sm">2001</span>
+            <h4 class="text-xl font-bold text-sano-600">Distribuição de Carnes</h4>
+            <p class="text-earth-500">Início da atividade de distribuição de carnes.</p>
+          </div>
+          <div class="hidden md:block"></div>
+          <div class="hidden md:block"></div>
+          <div class="reveal reveal-delay-1 md:pl-12 relative">
+            <div class="timeline-dot hidden md:block" style="width:16px;height:16px;background:#2d5a3d;border:3px solid #C9A84C;border-radius:50%;position:absolute;left:-8px;top:4px;z-index:2;"></div>
+            <span class="text-gold-400 font-bold text-sm">2002</span>
+            <h4 class="text-xl font-bold text-sano-600">Granja Esperança</h4>
+            <p class="text-earth-500">Aquisição: 34 hectares, 650 matrizes, 10.000 animais.</p>
+          </div>
+          <div class="reveal reveal-delay-2 md:text-right md:pr-12 relative">
+            <div class="timeline-dot hidden md:block" style="width:16px;height:16px;background:#2d5a3d;border:3px solid #C9A84C;border-radius:50%;position:absolute;right:-8px;top:4px;z-index:2;"></div>
+            <span class="text-gold-400 font-bold text-sm">2009</span>
+            <h4 class="text-xl font-bold text-sano-600">Faz. Ribeirão da Mata</h4>
+            <p class="text-earth-500">Aquisição de 40 ha para confinamento bovino.</p>
+          </div>
+          <div class="hidden md:block"></div>
+          <div class="hidden md:block"></div>
+          <div class="reveal reveal-delay-3 md:pl-12 relative">
+            <div class="timeline-dot hidden md:block" style="width:16px;height:16px;background:#2d5a3d;border:3px solid #C9A84C;border-radius:50%;position:absolute;left:-8px;top:4px;z-index:2;"></div>
+            <span class="text-gold-400 font-bold text-sm">2014</span>
+            <h4 class="text-xl font-bold text-sano-600">Distrito Industrial III</h4>
+            <p class="text-earth-500">Aquisição de 8.000 m² para futura indústria de carnes.</p>
+          </div>
+          <div class="reveal reveal-delay-1 md:text-right md:pr-12 relative">
+            <div class="timeline-dot hidden md:block" style="width:16px;height:16px;background:#2d5a3d;border:3px solid #C9A84C;border-radius:50%;position:absolute;right:-8px;top:4px;z-index:2;"></div>
+            <span class="text-gold-400 font-bold text-sm">2015</span>
+            <h4 class="text-xl font-bold text-sano-600">Granja Diamante</h4>
+            <p class="text-earth-500">Arrendamento: 330 matrizes e 3.500 animais.</p>
+          </div>
+        </div>
+      </div>
+
+      <style>.timeline-dot-m{display:none}@media(min-width:768px){.timeline-dot-m{display:block}}</style>
+
+      <!-- Grid de Unidades -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Granja Abelhas -->
         <div class="unit-card group h-72 reveal reveal-delay-1">
           <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?w=600&q=80" alt="Granja Abelhas" class="w-full h-full object-cover" loading="lazy" />
           <div class="unit-overlay"></div>
           <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
             <span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Desde 1989</span>
             <h3 class="text-xl font-bold text-white mt-1">Granja Abelhas</h3>
-            <p class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300">O marco inicial — onde a história começou.</p>
+            <p class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300">Unidade de Produção de Leitões ~620 matrizes e 3.000 animais.</p>
           </div>
         </div>
+        <!-- Granja Patinhas -->
         <div class="unit-card group h-72 reveal reveal-delay-2">
           <img src="https://images.unsplash.com/photo-1516205651411-aef33a44f7c0?w=600&q=80" alt="Granja Patinhas" class="w-full h-full object-cover" loading="lazy" />
           <div class="unit-overlay"></div>
           <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-            <span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Expansão</span>
+            <span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Recria e Terminação</span>
             <h3 class="text-xl font-bold text-white mt-1">Granja Patinhas</h3>
-            <p class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300">Unidade para expansão do plantel de matrizes.</p>
+            <p class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300">4.300 animais em recria e terminação.</p>
           </div>
         </div>
+        <!-- Granja Esperança -->
         <div class="unit-card group h-72 reveal reveal-delay-3">
           <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&q=80" alt="Granja Esperança" class="w-full h-full object-cover" loading="lazy" />
           <div class="unit-overlay"></div>
           <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-            <span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Produção</span>
+            <span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Adquirida em 2002</span>
             <h3 class="text-xl font-bold text-white mt-1">Granja Esperança</h3>
-            <p class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300">Unidade focada na expansão da produção.</p>
+            <p class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300">34 hectares, 650 matrizes, 10.000 animais em terminação.</p>
           </div>
         </div>
+        <!-- Faz. Ribeirão da Mata -->
         <div class="unit-card group h-72 reveal reveal-delay-1">
           <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80" alt="Fazenda Ribeirão da Mata" class="w-full h-full object-cover" loading="lazy" />
           <div class="unit-overlay"></div>
           <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-            <span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Desde 2009</span>
+            <span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Adquirida em 2009</span>
             <h3 class="text-xl font-bold text-white mt-1">Faz. Ribeirão da Mata</h3>
-            <p class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300">Infraestrutura de confinamento bovino.</p>
+            <p class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300">40 hectares. Currais, balança eletrônica, silos-trincheira.</p>
           </div>
         </div>
+        <!-- Granja Diamante -->
         <div class="unit-card group h-72 reveal reveal-delay-2">
           <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=600&q=80" alt="Granja Diamante" class="w-full h-full object-cover" loading="lazy" />
           <div class="unit-overlay"></div>
           <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-            <span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Arrendamento</span>
+            <span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Arrendada em 2015</span>
             <h3 class="text-xl font-bold text-white mt-1">Granja Diamante</h3>
-            <p class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300">Instalações para aumento de matrizes suínas.</p>
+            <p class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300">330 matrizes e 3.500 animais em terminação.</p>
           </div>
         </div>
+        <!-- Lavouras + Distrito Industrial -->
         <div class="unit-card group h-72 reveal reveal-delay-3" style="background: linear-gradient(135deg, #2d5a3d, #1e3d29);">
           <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-            <svg class="w-12 h-12 text-gold-400 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
+            <svg class="w-10 h-10 text-gold-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
             <span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Autossuficiência</span>
-            <h3 class="text-xl font-bold text-white mt-1">Lavouras</h3>
-            <p class="text-white/70 text-sm mt-2">Mais de 700 hectares produzindo grãos para alimentação animal.</p>
-            <span class="text-3xl font-bold text-gold-400 mt-2">700+ ha</span>
+            <h3 class="text-lg font-bold text-white mt-1">Lavouras + D. Industrial</h3>
+            <p class="text-white/70 text-xs mt-1">700 ha de lavouras + 8.000 m² no Distrito Industrial III</p>
+            <span class="text-2xl font-bold text-gold-400 mt-1">700+ ha</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ESTATÍSTICAS FROTA -->
+  <section class="py-16 bg-sano-600">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div class="reveal"><span class="stat-number text-4xl md:text-5xl">80</span><p class="text-white/80 text-sm mt-2 font-medium">Empregos Diretos</p></div>
+        <div class="reveal reveal-delay-1"><span class="stat-number text-4xl md:text-5xl">16</span><p class="text-white/80 text-sm mt-2 font-medium">Caminhões na Frota</p></div>
+        <div class="reveal reveal-delay-2"><span class="stat-number text-4xl md:text-5xl">5K</span><p class="text-white/80 text-sm mt-2 font-medium">Animais/Ano</p></div>
+        <div class="reveal reveal-delay-3"><span class="stat-number text-4xl md:text-5xl">8K</span><p class="text-white/80 text-sm mt-2 font-medium">m² no Distrito Industrial</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
-  <section class="py-16 md:py-20 bg-sano-600">
+  <section class="py-16 md:py-20 bg-sano-500">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <div class="reveal">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Qualidade que vem da origem</h2>
@@ -378,38 +437,32 @@
         <div class="reveal reveal-delay-1">
           <form id="contato-form" class="space-y-6" onsubmit="return handleFormSubmit(event)">
             <div class="grid sm:grid-cols-2 gap-6">
-              <div><label for="nome" class="block text-sm font-medium text-sano-600 mb-1.5">Nome</label><input type="text" id="nome" required class="form-input" placeholder="Seu nome completo" /></div>
-              <div><label for="email" class="block text-sm font-medium text-sano-600 mb-1.5">E-mail</label><input type="email" id="email" required class="form-input" placeholder="seu@email.com" /></div>
+              <div><label class="block text-sm font-medium text-sano-600 mb-1.5">Nome</label><input type="text" id="nome" required class="form-input" placeholder="Seu nome completo" /></div>
+              <div><label class="block text-sm font-medium text-sano-600 mb-1.5">E-mail</label><input type="email" id="email" required class="form-input" placeholder="seu@email.com" /></div>
             </div>
-            <div><label for="assunto" class="block text-sm font-medium text-sano-600 mb-1.5">Assunto</label>
+            <div><label class="block text-sm font-medium text-sano-600 mb-1.5">Assunto</label>
               <select id="assunto" class="form-input"><option value="">Selecione</option><option value="produtos">Quero saber sobre produtos</option><option value="parceria">Proposta de parceria</option><option value="visita">Agendar visita</option><option value="outro">Outro</option></select>
             </div>
-            <div><label for="mensagem" class="block text-sm font-medium text-sano-600 mb-1.5">Mensagem</label><textarea id="mensagem" rows="5" required class="form-input resize-none" placeholder="Escreva sua mensagem..."></textarea></div>
+            <div><label class="block text-sm font-medium text-sano-600 mb-1.5">Mensagem</label><textarea id="mensagem" rows="5" required class="form-input resize-none" placeholder="Escreva sua mensagem..."></textarea></div>
             <button type="submit" class="btn-primary w-full justify-center">Enviar Mensagem <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg></button>
             <p id="form-feedback" class="text-sm text-center hidden"></p>
           </form>
         </div>
         <div class="reveal reveal-delay-2 space-y-8">
           <div class="flex gap-5">
-            <div class="w-12 h-12 bg-sano-100 rounded-xl flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-            </div>
+            <div class="w-12 h-12 bg-sano-100 rounded-xl flex items-center justify-center shrink-0"><svg class="w-6 h-6 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></div>
             <div><h4 class="text-lg font-bold text-sano-600 mb-1">Endereço</h4><p class="text-earth-600">Rua Negrinho de Freitas, 151<br/>Bairro Cidade Nova<br/>Patos de Minas - MG<br/>CEP: 38706-418</p></div>
           </div>
           <div class="flex gap-5">
-            <div class="w-12 h-12 bg-sano-100 rounded-xl flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-            </div>
-            <div><h4 class="text-lg font-bold text-sano-600 mb-1">Telefone</h4><a href="tel:+553438219928" class="text-earth-600 hover:text-sano-500 text-lg">(34) 3821-9928</a></div>
+            <div class="w-12 h-12 bg-sano-100 rounded-xl flex items-center justify-center shrink-0"><svg class="w-6 h-6 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div>
+            <div><h4 class="text-lg font-bold text-sano-600 mb-1">Telefone</h4><a href="tel:+553438219928" class="text-earth-600 hover:text-sano-500 text-lg">(34) 3821-9928</a><p class="text-earth-400 text-sm">E-mail: sano@sanoalimentos.com.br</p></div>
           </div>
           <div class="flex gap-5">
-            <div class="w-12 h-12 bg-sano-100 rounded-xl flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
+            <div class="w-12 h-12 bg-sano-100 rounded-xl flex items-center justify-center shrink-0"><svg class="w-6 h-6 text-sano-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
             <div><h4 class="text-lg font-bold text-sano-600 mb-1">Horário</h4><p class="text-earth-600">Seg a Sex: 8h às 18h<br/>Sáb: 8h às 12h</p></div>
           </div>
           <div class="bg-earth-50 rounded-2xl p-4 border border-earth-100">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3789.453!2d-46.518!3d-18.579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a8e8!2sPatos+de+Minas!5e0!3m2!1spt-BR!2sbr!4v1" width="100%" height="160" style="border:0; border-radius: 0.75rem;" allowfullscreen="" loading="lazy" title="Mapa Patos de Minas"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3789.453!2d-46.518!3d-18.579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a8e8!2sPatos+de+Minas!5e0!3m2!1spt-BR!2sbr!4v1" width="100%" height="160" style="border:0; border-radius:0.75rem;" allowfullscreen="" loading="lazy" title="Mapa Patos de Minas"></iframe>
           </div>
         </div>
       </div>
@@ -422,10 +475,7 @@
       <div class="grid md:grid-cols-4 gap-10">
         <div class="md:col-span-2 lg:col-span-1">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-xl bg-sano-500 flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
-            </div>
-            <div><span class="text-lg font-bold">SANO</span><span class="block text-[10px] text-gold-400 tracking-widest uppercase -mt-1">Alimentos</span></div>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-SLToWslbVB-2Y8ACLgHMOXKRtgboRyfe7VlEuok-oH22z3zbLXyfbi-M_UpSn8u00mG9dxpK5DWQ3FCN-0hGlBvkVNE4umhsQ-WOaUCk0yo1dTwROUBEspOBBpyqbdgTwtWK0EDNQLjD/s1094/aaaaaaaaaa.png" alt="Sano Alimentos" class="h-10 w-auto" />
           </div>
           <p class="text-white/60 text-sm">Tradição e qualidade no agronegócio desde 1989. Da lavoura à sua mesa.</p>
         </div>
@@ -440,10 +490,11 @@
         </div>
         <div><h4 class="text-sm font-semibold text-gold-400 tracking-widest uppercase mb-4">Atuação</h4>
           <ul class="space-y-2.5">
-            <li><span class="text-white/60 text-sm">Agricultura</span></li>
-            <li><span class="text-white/60 text-sm">Suinocultura</span></li>
-            <li><span class="text-white/60 text-sm">Bovinocultura</span></li>
+            <li><span class="text-white/60 text-sm">Agricultura (700 ha)</span></li>
+            <li><span class="text-white/60 text-sm">Suinocultura (4 granjas)</span></li>
+            <li><span class="text-white/60 text-sm">Bovinocultura (1.000 reses)</span></li>
             <li><span class="text-white/60 text-sm">Distribuição de Carnes</span></li>
+            <li><span class="text-white/60 text-sm">Frota: 16 caminhões</span></li>
           </ul>
         </div>
         <div><h4 class="text-sm font-semibold text-gold-400 tracking-widest uppercase mb-4">Redes Sociais</h4>
@@ -462,7 +513,7 @@
       </div>
       <div class="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p class="text-white/40 text-sm">&copy; 2026 Sano Alimentos. Todos os direitos reservados.</p>
-        <p class="text-white/30 text-xs">Grupo Sano Alimentos — Patos de Minas, MG</p>
+        <p class="text-white/30 text-xs">SANO ALIMENTOS LTDA — Patos de Minas, MG — (34) 3821-9928</p>
       </div>
     </div>
   </footer>
@@ -472,8 +523,8 @@
       'use strict';
       var header = document.getElementById('header');
       window.addEventListener('scroll', function() {
-        if (window.scrollY > 80) { header.classList.add('header-scrolled'); }
-        else { header.classList.remove('header-scrolled'); }
+        if (window.scrollY > 80) header.classList.add('header-scrolled');
+        else header.classList.remove('header-scrolled');
       }, { passive: true });
 
       var menuBtn = document.getElementById('mobile-menu-btn');
@@ -487,19 +538,17 @@
           iconClose.classList.toggle('hidden', !isOpen);
           menuBtn.setAttribute('aria-expanded', isOpen);
           document.body.style.overflow = isOpen ? 'hidden' : '';
+          if (isOpen) header.classList.add('header-scrolled');
+          else if (window.scrollY <= 80) header.classList.remove('header-scrolled');
         });
       }
       document.querySelectorAll('.mobile-nav-link').forEach(function(l) {
-        l.addEventListener('click', function() { menuBtn.click(); });
+        l.addEventListener('click', function() { if (menuBtn) menuBtn.click(); });
       });
+      window.addEventListener('resize', function() { if (window.innerWidth >= 768) { mobileMenu.classList.remove('mobile-menu-open'); iconOpen.classList.remove('hidden'); iconClose.classList.add('hidden'); document.body.style.overflow = ''; }});
 
       var revealEls = document.querySelectorAll('.reveal');
-      function checkReveal() {
-        var wh = window.innerHeight;
-        revealEls.forEach(function(el) {
-          if (el.getBoundingClientRect().top < wh - 80) el.classList.add('visible');
-        });
-      }
+      function checkReveal() { var wh = window.innerHeight; revealEls.forEach(function(el) { if (el.getBoundingClientRect().top < wh - 80) el.classList.add('visible'); }); }
       checkReveal();
       window.addEventListener('scroll', checkReveal, { passive: true });
 
@@ -509,18 +558,13 @@
         var nome = document.getElementById('nome').value.trim();
         var email = document.getElementById('email').value.trim();
         var msg = document.getElementById('mensagem').value.trim();
-        if (!nome || !email || !msg) {
-          fb.textContent = 'Preencha todos os campos obrigatórios.';
-          fb.className = 'text-sm text-red-500 mt-2';
-          fb.classList.remove('hidden');
-          return false;
-        }
+        if (!nome || !email || !msg) { fb.textContent = 'Preencha todos os campos.'; fb.className = 'text-sm text-red-500 mt-2'; fb.classList.remove('hidden'); return false; }
         var btn = e.target.querySelector('button[type="submit"]');
         var orig = btn.innerHTML;
         btn.disabled = true;
         btn.innerHTML = '<svg class="animate-spin w-5 h-5 mx-auto" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Enviando...';
         setTimeout(function() {
-          fb.textContent = 'Mensagem enviada com sucesso! Entraremos em contato.';
+          fb.textContent = 'Mensagem enviada! Entraremos em contato.';
           fb.className = 'text-sm text-sano-500 font-medium mt-2';
           fb.classList.remove('hidden');
           btn.disabled = false;
@@ -536,11 +580,7 @@
           var id = this.getAttribute('href');
           if (id === '#') return;
           var t = document.querySelector(id);
-          if (t) {
-            e.preventDefault();
-            var h = header.offsetHeight;
-            window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - h, behavior: 'smooth' });
-          }
+          if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - header.offsetHeight, behavior: 'smooth' }); }
         });
       });
     })();

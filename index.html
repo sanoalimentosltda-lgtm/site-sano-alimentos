@@ -100,7 +100,7 @@
     @media (max-width: 640px) { .stat-number { font-size: 2.25rem; } }
   
     /* Lightbox */
-    .lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; cursor: pointer; }
+    .lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; }
     .lightbox.active { display: flex; }
     .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
     .lightbox .close-lightbox { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000; transition: 0.3s; }
@@ -622,7 +622,7 @@
   </script>
 
   <!-- ============ LIGHTBOX ============ -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <div id="lightbox" class="lightbox" onclick="if(event.target==this)closeLightbox()">
     <span class="close-lightbox">&times;</span>
     <img id="lightbox-img" src="" alt="" />
     <div id="lightbox-caption" class="caption"></div>

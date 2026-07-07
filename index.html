@@ -626,9 +626,9 @@
 
 
   <!-- ============ LIGHTBOX ============ -->
-  <div id="lightbox" class="lightbox" onclick="if(event.target===this||event.target.id==='lightbox')closeLightbox()">
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-    <div id="lb-wrapper" class="lightbox-wrapper"></div>
+    <div id="lb-wrapper" class="lightbox-wrapper" onclick="event.stopPropagation()"></div>
   </div>
 
   <script>
@@ -637,21 +637,21 @@
     var url = base + filename;
     var lb = document.getElementById("lightbox");
     var wrapper = document.getElementById("lb-wrapper");
-    // Limpar wrapper
     wrapper.innerHTML = "";
     var img = document.createElement("img");
     img.alt = caption;
     img.onload = function() {
       wrapper.appendChild(img);
-      var cap = document.createElement("div");
+      var cap = document.getElementById("lb-caption") || document.createElement("div");
+      cap.id = "lb-caption";
       cap.className = "caption";
       cap.textContent = caption;
-      lb.appendChild(cap);
+      if (!cap.parentNode) lb.appendChild(cap);
       lb.classList.add("active");
       document.body.style.overflow = "hidden";
     };
     img.onerror = function() {
-      wrapper.innerHTML = '<p style="color:red;text-align:center;font-size:1.5rem;">Erro ao carregar<br><small style="color:#999;">' + url + '</small></p>';
+      wrapper.innerHTML = '<p style="color:#ff6b6b;text-align:center;font-size:1.5rem;margin-top:45vh;">Erro ao carregar<br><small style="color:#999;">' + url + '</small></p>';
       lb.classList.add("active");
     };
     img.src = url;
@@ -660,8 +660,7 @@
     var lb = document.getElementById("lightbox");
     var wrapper = document.getElementById("lb-wrapper");
     if (wrapper) wrapper.innerHTML = "";
-    // Remover caption se existir
-    var cap = lb.querySelector(".caption");
+    var cap = document.getElementById("lb-caption");
     if (cap) cap.remove();
     lb.classList.remove("active");
     document.body.style.overflow = "";

@@ -96,3 +96,38 @@ Site institucional do **Grupo Sano Alimentos** (Patos de Minas - MG). One-page m
 - **GitHub:** https://github.com/sanoalimentosltda-lgtm/site-sano-alimentos
 - **Video:** https://www.youtube.com/watch?v=FzdzpJC8sHA
 - **Formulario:** formsubmit.co/controladoria@sanoalimentos.com.br
+
+## 🪟 Lightbox - Histórico e Lições Aprendidas
+
+### Contexto
+O lightbox (visualização ampliada das fotos das propriedades) foi implementado no commit `1a0b3a0`.
+Ele permite clicar nos cards das propriedades (Granja Abelhas, Patinhas, Esperança, etc.) para ver a foto em tamanho maior com fundo escuro.
+
+### Estrutura do Lightbox
+- **CSS:** Classe `.lightbox` com `position: fixed; z-index: 9999` e `.lightbox.active { display: flex; }`
+- **HTML:** `<div id="lightbox">` com `<img id="lightbox-img">` e `<div id="lightbox-caption">`
+- **JS:** Funções `openLightbox(filename, caption)` e `closeLightbox()`
+- **Imagens:** Servidas via `raw.githubusercontent.com` do próprio repositório (pasta `/fotos/`)
+
+### 🐛 BUG CRÍTICO DESCOBERTO (Julho 2026)
+O lightbox parou de funcionar corretamente (imagem aparecia minúscula ou tela preta sem imagem) devido a **tags HTML mal fechadas** na seção da timeline ("Marcos da nossa jornada").
+
+**Causa:** Ao reformatar a timeline (commit `b9d04df`), a estrutura de fechamento da seção História foi quebrada:
+- Faltaram 4 tags de fechamento (`</div>` x3 + `</section>`)
+- Isso fez o DOM inteiro ficar malformado
+- O lightbox (posicionado depois no HTML) ficou dentro de uma estrutura quebrada
+- O `z-index`, posicionamento `fixed` e layout do lightbox foram afetados
+
+**Solução:** Garantir que TODAS as seções HTML sejam corretamente fechadas com `</section>`, `</div>` etc. Um DOM malformado afeta componentes que usam `position: fixed` e `z-index`.
+
+**Lições:**
+1. ⚠️ Sempre verificar se seções HTML têm fechamento correto (`</section>`, `</div>`)
+2. 🔍 Se o lightbox (ou qualquer elemento `position: fixed`) parar de funcionar, verificar a estrutura do DOM primeiro
+3. ✅ A ordem de fechamento correta é: divs aninhados → div da seção → `</section>` → próxima seção
+4. 📐 O `max-width: 90%` na imagem do lightbox funciona apenas em DOM bem formado (standards mode)
+5. 🚫 A falta de `<!DOCTYPE html>` também pode causar problemas (quirks mode)
+
+### Commits de referência
+- `a3543df` — Último commit ANTES do bug (lightbox funcionando)
+- `b9d04df` — Commit onde o bug foi INTRODUZIDO (timeline quebrou o DOM)
+- `218e490` — Commit onde o bug foi CORRIGIDO

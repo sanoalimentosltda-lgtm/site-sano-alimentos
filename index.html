@@ -626,8 +626,9 @@
 
 
   <!-- ============ LIGHTBOX ============ -->
-  <div id="lightbox" class="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <div id="lightbox" class="lightbox" onclick="if(event.target===this||event.target.id==='lightbox')closeLightbox()">
     <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <div id="lb-wrapper" class="lightbox-wrapper"></div>
   </div>
 
   <script>
@@ -635,35 +636,33 @@
     var base = "https://raw.githubusercontent.com/sanoalimentosltda-lgtm/site-sano-alimentos/main/fotos/";
     var url = base + filename;
     var lb = document.getElementById("lightbox");
-    lb.innerHTML = '<span class="close-lightbox" onclick="closeLightbox()">&times;</span>';
+    var wrapper = document.getElementById("lb-wrapper");
+    // Limpar wrapper
+    wrapper.innerHTML = "";
     var img = document.createElement("img");
-    // ESTILO INLINE - maxima prioridade, sem depender de CSS externo
-    img.style.width = "90vw";
-    img.style.maxWidth = "90vw";
-    img.style.maxHeight = "90vh";
-    img.style.objectFit = "contain";
-    img.style.borderRadius = "8px";
-    img.style.display = "block";
-    img.style.margin = "0 auto";
     img.alt = caption;
     img.onload = function() {
-      lb.appendChild(img);
+      wrapper.appendChild(img);
       var cap = document.createElement("div");
-      cap.style.cssText = "position:fixed;bottom:30px;left:0;right:0;text-align:center;color:#D4A830;font-family:'Playfair Display',serif;font-size:1.2rem;z-index:10001;";
+      cap.className = "caption";
       cap.textContent = caption;
       lb.appendChild(cap);
       lb.classList.add("active");
       document.body.style.overflow = "hidden";
     };
     img.onerror = function() {
-      lb.innerHTML = '<span class="close-lightbox" onclick="closeLightbox()">&times;</span><p style="color:red;text-align:center;margin-top:40vh;font-size:1.5rem;">Erro ao carregar<br><small style="color:#999;">' + url + '</small></p>';
+      wrapper.innerHTML = '<p style="color:red;text-align:center;font-size:1.5rem;">Erro ao carregar<br><small style="color:#999;">' + url + '</small></p>';
       lb.classList.add("active");
     };
     img.src = url;
   }
   function closeLightbox() {
     var lb = document.getElementById("lightbox");
-    lb.innerHTML = '<span class="close-lightbox" onclick="closeLightbox()">&times;</span>';
+    var wrapper = document.getElementById("lb-wrapper");
+    if (wrapper) wrapper.innerHTML = "";
+    // Remover caption se existir
+    var cap = lb.querySelector(".caption");
+    if (cap) cap.remove();
     lb.classList.remove("active");
     document.body.style.overflow = "";
   }

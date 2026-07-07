@@ -635,16 +635,21 @@
     var base = "https://raw.githubusercontent.com/sanoalimentosltda-lgtm/site-sano-alimentos/main/fotos/";
     var url = base + filename;
     var lb = document.getElementById("lightbox");
-    // Limpar, manter apenas o botao fechar
     lb.innerHTML = '<span class="close-lightbox" onclick="closeLightbox()">&times;</span>';
-    // Criar img e adicionar ao lightbox
     var img = document.createElement("img");
-    img.className = "lightbox-img-display";
+    // ESTILO INLINE - maxima prioridade, sem depender de CSS externo
+    img.style.width = "90vw";
+    img.style.maxWidth = "90vw";
+    img.style.maxHeight = "90vh";
+    img.style.objectFit = "contain";
+    img.style.borderRadius = "8px";
+    img.style.display = "block";
+    img.style.margin = "0 auto";
     img.alt = caption;
     img.onload = function() {
       lb.appendChild(img);
       var cap = document.createElement("div");
-      cap.className = "caption";
+      cap.style.cssText = "position:fixed;bottom:30px;left:0;right:0;text-align:center;color:#D4A830;font-family:'Playfair Display',serif;font-size:1.2rem;z-index:10001;";
       cap.textContent = caption;
       lb.appendChild(cap);
       lb.classList.add("active");

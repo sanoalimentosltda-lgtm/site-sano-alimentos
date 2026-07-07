@@ -103,7 +103,7 @@
     .lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; text-align: center; }
     .lightbox.active { display: flex; }
     .lightbox img { max-width: 90vw; max-height: 85vh; width: auto; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); display: inline-block; }
-    .lightbox .close-lightbox { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000; transition: 0.3s; }
+    .lightbox-img-wrapper { display:inline-block; position:relative; } .lightbox .close-lightbox { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000; transition: 0.3s; }
     .lightbox .close-lightbox:hover { color: #D4A830; }
     .lightbox .caption { position: absolute; bottom: 30px; left: 0; right: 0; text-align: center; color: #D4A830; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
 
@@ -622,30 +622,34 @@
   </script>
 
   <!-- ============ LIGHTBOX ============ -->
-  <div id="lightbox" class="lightbox" onclick="if(event.target==this)closeLightbox()">
-    <span class="close-lightbox">&times;</span>
-    <img id="lightbox-img" src="" alt="" />
-    <div id="lightbox-caption" class="caption"></div>
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <span class="close-lightbox" onclick="closeLightbox(event)">&times;</span>
+    <div id="lightbox-img-wrapper" class="lightbox-img-wrapper">
+      <img id="lightbox-img" src="" alt="" style="display:block;max-width:90vw;max-height:85vh;width:auto;height:auto;margin:0 auto;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.5);" />
+      <div id="lightbox-caption" class="caption"></div>
+    </div>
   </div>
 
   <script>
   function openLightbox(filename, caption) {
     var base = "https://raw.githubusercontent.com/sanoalimentosltda-lgtm/site-sano-alimentos/main/fotos/";
-    var lb = document.getElementById("lightbox");
     var img = document.getElementById("lightbox-img");
+    var lb = document.getElementById("lightbox");
     var cap = document.getElementById("lightbox-caption");
     img.src = base + filename;
     img.alt = caption;
     cap.textContent = caption;
-    lb.classList.add("active");
+    lb.style.display = "flex";
     document.body.style.overflow = "hidden";
   }
-  function closeLightbox() {
-    document.getElementById("lightbox").classList.remove("active");
-    document.body.style.overflow = "";
+  function closeLightbox(e) {
+    if (e && e.target !== document.getElementById("lightbox-img") && e.target !== document.getElementById("lightbox-img-wrapper")) {
+      document.getElementById("lightbox").style.display = "none";
+      document.body.style.overflow = "";
+    }
   }
   document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") closeLightbox();
+    if (e.key === "Escape") { document.getElementById("lightbox").style.display = "none"; document.body.style.overflow = ""; }
   });
   </script>
 

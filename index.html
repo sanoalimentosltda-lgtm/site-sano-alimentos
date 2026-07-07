@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -31,9 +30,9 @@
     
     /* Header */
     #header { transition: all 0.4s ease; }
-    #header.scrolled { background: rgba(26,26,62,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(212,168,48,0.15); }
-    #header.scrolled .nav-link { color: rgba(255,255,255,0.8); }
-    #header.scrolled .nav-link:hover { color: #D4A830; }
+    
+    
+    
     
     .nav-link { position: relative; color: rgba(255,255,255,0.85); font-weight: 500; font-size: 0.875rem; transition: color 0.3s; letter-spacing: 0.02em; }
     .nav-link:hover { color: #D4A830; }
@@ -100,10 +99,13 @@
 
     @media (max-width: 640px) { .stat-number { font-size: 2.25rem; } }
   
+    
+
+
     /* Lightbox */
     .lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; cursor: pointer; }
     .lightbox.active { display: flex; }
-    .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .lightbox img { width: 80%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
     .lightbox .close-lightbox { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000; transition: 0.3s; }
     .lightbox .close-lightbox:hover { color: #D4A830; }
     .lightbox .caption { position: absolute; bottom: 30px; left: 0; right: 0; text-align: center; color: #D4A830; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
@@ -113,10 +115,10 @@
 <body>
 
   <!-- ============ HEADER ============ -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50 py-3 md:py-4">
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 py-3 md:py-4 bg-navy-500/95 backdrop-blur-lg border-b border-gold-500/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
       <a href="#hero" class="flex items-center gap-3">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-SLToWslbVB-2Y8ACLgHMOXKRtgboRyfe7VlEuok-oH22z3zbLXyfbi-M_UpSn8u00mG9dxpK5DWQ3FCN-0hGlBvkVNE4umhsQ-WOaUCk0yo1dTwROUBEspOBBpyqbdgTwtWK0EDNQLjD/s1094/aaaaaaaaaa.png" alt="Sano Alimentos" class="h-10 md:h-12 w-auto" style="filter:drop-shadow(0 0 8px rgba(255,255,255,0.2))" />
+        <img src="fotos/logo_sano.png" alt="Sano Alimentos" class="h-10 md:h-12 w-auto"  />
       </a>
       <nav class="hidden lg:flex items-center gap-8">
         <a href="#hero" class="nav-link">Início</a>
@@ -135,27 +137,28 @@
         <a href="#hero" class="mobile-link block px-4 py-3 rounded-lg text-white/70 hover:text-gold-400 hover:bg-white/5 transition-all">Início</a>
         <a href="#historia" class="mobile-link block px-4 py-3 rounded-lg text-white/70 hover:text-gold-400 hover:bg-white/5 transition-all">História</a>
         <a href="#unidades" class="mobile-link block px-4 py-3 rounded-lg text-white/70 hover:text-gold-400 hover:bg-white/5 transition-all">Unidades</a>
-        <a href="#atuacao" class="mobile-link block px-4 py-3 rounded-lg text-white/70 hover:text-gold-400 hover:bg-white/5 transition-all">Operações</a>
+        <a href="#atuacao" class="mobile-link block px-4 py-3 rounded-lg text-white/70 hover:text-gold-400 hover:bg-white/5 transition-all">Operacoes</a>
+            <a href="#filosofia" class="mobile-link block px-4 py-3 rounded-lg text-white/70 hover:text-gold-400 hover:bg-white/5 transition-all">Filosofia</a> block px-4 py-3 rounded-lg text-white/70 hover:text-gold-400 hover:bg-white/5 transition-all">Operações</a>
         <a href="#contato" class="block px-4 py-3 mt-3 bg-gold-500 text-navy-500 font-semibold rounded-lg text-center">Contato</a>
       </nav>
     </div>
   </header>
 
   <!-- ============ HERO ============ -->
-  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+  <section id="hero" class="relative min-h-[85vh] md:min-h-[85vh] flex items-center overflow-hidden">
     <div class="absolute inset-0">
       <img src="https://images.unsplash.com/photo-1548781861-57110507372c?w=1600<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80" alt="Campo Sano Alimentos" class="w-full h-full object-cover" loading="eager" />q=80" alt="Granja Sano Alimentos — Suinocultura" class="w-full h-full object-cover" loading="eager" />
       <div class="hero-overlay absolute inset-0"></div>
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="max-w-3xl">
-        <span class="inline-block px-3 py-1 bg-gold-500/20 text-gold-400 text-xs font-semibold tracking-widest uppercase rounded-full mb-6 reveal visible">🏆 2ª Melhor Suinocultura do Brasil — Agriness</span>
-        <h1 class="hero-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-6 reveal visible reveal-d1">
+        
+        <h1 class="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-4 reveal visible reveal-d1">
           Nossa história é<br/>
           <span class="text-gold-400">a nossa conquista</span>
         </h1>
-        <p class="text-lg md:text-xl text-white/70 max-w-xl mb-10 font-light leading-relaxed reveal visible reveal-d2">
-          Referência nacional em <strong class="text-white">suinocultura</strong>, a Sano gera <strong class="text-white">100 empregos diretos</strong> e foi <strong class="text-white">eleita a 2ª melhor Suinocultura do Brasil pela Agriness</strong> — são mais de 35 anos de tradição que alimentam o Brasil.
+        <p class="text-base md:text-lg text-white/70 max-w-xl mb-6 font-light leading-relaxed reveal visible reveal-d2">
+          Referência nacional em <strong class="text-white">suinocultura</strong>, a Sano gera <strong class="text-white">80+ empregos diretos</strong> e acumula premiações no <strong class="text-white">ranking Agriness</strong> — são mais de 35 anos de tradição que alimentam o Brasil.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 reveal visible reveal-d3">
           <a href="#historia" class="btn-primary">
@@ -173,14 +176,14 @@
   </section>
 
   <!-- ============ STATS BAR ============ -->
-  <section class="py-12 md:py-16 bg-navy-500">
+  <section class="py-6 md:py-8 bg-navy-500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-center">
         <div class="reveal"><div class="stat-number">35+</div><p class="text-white/60 text-sm mt-1 font-medium tracking-wide uppercase">Anos de história</p></div>
-        <div class="reveal reveal-d1"><div class="stat-number">100</div><p class="text-white/60 text-sm mt-1 font-medium tracking-wide uppercase">Empregos diretos</p></div>
+        <div class="reveal reveal-d1"><div class="stat-number">80+</div><p class="text-white/60 text-sm mt-1 font-medium tracking-wide uppercase">Empregos diretos</p></div>
         <div class="reveal reveal-d2"><div class="stat-number">16</div><p class="text-white/60 text-sm mt-1 font-medium tracking-wide uppercase">Caminhões</p></div>
         <div class="reveal reveal-d3"><div class="stat-number">700+</div><p class="text-white/60 text-sm mt-1 font-medium tracking-wide uppercase">Hectares cultivados</p></div>
-        <div class="reveal"><div class="text-2xl md:text-3xl font-bold font-display text-gold-400">🏆 2ª</div><p class="text-white/60 text-xs mt-1 font-medium tracking-wide uppercase">Melhor Suinocultura<br/>Agriness Brasil</p></div>
+        <div class="reveal"><div class="text-2xl md:text-3xl font-bold font-display text-gold-400">🏆 3x</div><p class="text-white/60 text-xs mt-1 font-medium tracking-wide uppercase">Premiada Agriness<br/>1º e 2º lugar Brasil</p></div>
         <div class="reveal reveal-d1"><div class="text-2xl md:text-3xl font-bold font-display text-gold-400">🐷</div><p class="text-white/60 text-xs mt-1 font-medium tracking-wide uppercase">Mais de 25.000<br/>animais em crescimento</p></div>
       </div>
     </div>
@@ -195,19 +198,17 @@
           <h2 class="section-title">Uma trajetória de <span class="text-gold-500">excelência</span> no campo</h2>
           <div class="w-16 h-0.5 bg-gold-500 mt-6 mb-8"></div>
           <div class="space-y-5 text-navy-500/80 leading-relaxed">
-            <p class="text-lg">Fundado em <strong class="text-navy-500">1989</strong> por <strong class="text-navy-500">Saulo de Deus Vieira</strong> e <strong class="text-navy-500">Valder Caixeta dos Santos</strong>, o Grupo Sano Alimentos nasceu com a <strong class="text-navy-500">Granja Abelhas</strong> — 50 matrizes em 20 hectares. Em pouco tempo, saltou para 110 e depois 330 matrizes. Atentos ao ditado de <em>&#8220;não colocar todos os ovos em um único recipiente&#8221;</em>, os empresários buscaram diversificar suas atividades desde cedo.</p>
-            <p>Em <strong>1997</strong> foi criada a <strong>SANO ALIMENTOS LTDA</strong>, que atua no comércio atacadista de carcaças suínas e bovinas, <strong>atendendo açougues e casas de carnes na cidade e região</strong>. A partir daí, vieram a <strong>Granja Patinhas</strong>, dedicada à recria e terminação, com fábrica de rações que atende todo o grupo, balança rodoviária e silos graneleiros de 75 mil sacas; a <strong>Granja Esperança</strong>, adquirida em 2002 com 34 hectares; e a <strong>Fazenda Ribeirão da Mata</strong>, uma gleba de 40 hectares adquirida em 2009 para confinamento bovino.</p>
-            <p>Hoje, a suinocultura é o coração do grupo: <strong>1.600 matrizes</strong> distribuídas em <strong>4 granjas especializadas</strong> — da UPL (creche) ao ciclo completo, recria e terminação — com capacidade para <strong>mais de 25.000 animais</strong> em crescimento. Esse volume e qualidade renderam à Sano o título de <strong class="text-gold-500">2ª melhor Suinocultura do Brasil pela Agriness</strong>.</p><p>Em <strong>2014</strong>, prospectando o futuro, adquirimos <strong>8.000 m² no Distrito Industrial III</strong> de Patos de Minas para implantar câmaras frias e uma indústria de carnes e derivados. Em <strong>2015</strong>, arrendamos a <strong>Granja Diamante</strong>, expandindo ainda mais nossa capacidade produtiva.</p>
+            <p class="text-navy-500/80 leading-relaxed">Fundado em <strong class="text-navy-500">1989</strong> por <strong class="text-navy-500">Saulo de Deus Vieira</strong> e <strong class="text-navy-500">Valder Caixeta dos Santos</strong> — ambos ex-funcionários da <strong class="text-navy-500">Agroceres PIC</strong>, empresa de melhoramento genético animal, sendo Valder o conhecimento técnico em produção animal e Saulo a expertise em mercado e vendas, o Grupo Sano Alimentos nasceu com a <strong class="text-navy-500">Granja Abelhas</strong> — 50 matrizes em 26,6 hectares. Em pouco tempo, saltou para 110 e depois 330 matrizes. Atentos ao ditado de <em>&#8220;não colocar todos os ovos em um único recipiente&#8221;</em>, os empresários buscaram diversificar suas atividades desde cedo.</p>
+            <p class="text-navy-500/80 leading-relaxed">Em <strong>1993</strong> foi adquirida a <strong>Granja Patinhas</strong>, com 4,5 hectares dedicados à recria e terminação, onde foi construída fábrica de rações que atende todo o grupo, balança rodoviária e silos graneleiros de 75 mil sacas, junto a uma unidade de secagem e pré-limpeza de grãos. Em <strong>1997</strong> foi criada a <strong>SANO ALIMENTOS LTDA</strong>, passando a comercializar a própria produção para açougues e casas de carnes em Patos de Minas e região. A partir daí, vieram a <strong>Granja Esperança</strong>, com 58,1 hectares adquirida em 2002 — sendo 40,68 hectares de café irrigado e o restante dedicado à granja; e a <strong>Fazenda Ribeirão da Mata</strong>, uma gleba de 35,9 hectares adquirida em 2009 para confinamento bovino.</p>
+            <p class="text-navy-500/80 leading-relaxed">Hoje, a suinocultura é o coração do grupo: <strong>1.600 matrizes</strong> distribuídas em <strong>3 granjas especializadas</strong> — da UPL (creche) ao ciclo completo, recria e terminação — com capacidade para <strong>mais de 25.000 animais</strong> em crescimento. Esse volume e qualidade consolidaram a Sano como referência nacional em suinocultura.</p><p>Em <strong>2014</strong>, prospectando o futuro, adquirimos <strong>8.000 m² no Distrito Industrial III</strong> de Patos de Minas para implantar câmaras frias e uma indústria de carnes e derivados.</p>
           </div>
         </div>
-        <div class="reveal reveal-d2 relative">
-          <img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?w=800&q=80" alt="Fazenda Sano" class="w-full h-[28rem] object-cover rounded-2xl shadow-2xl" loading="lazy" />
+                  <div class="reveal reveal-d2 relative">
+          <img src="https://raw.githubusercontent.com/sanoalimentosltda-lgtm/site-sano-alimentos/main/fotos/fundadores.jpg" alt="Saulo e Valder — 30 anos Sano" class="w-full h-[28rem] object-cover rounded-2xl shadow-2xl" loading="lazy" />
           <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-gold-400/10 rounded-2xl -z-10"></div>
           <div class="absolute -top-4 -left-4 w-20 h-20 bg-terracotta-500/10 rounded-2xl -z-10"></div>
-          <div class="absolute -bottom-5 -left-5 bg-navy-500 text-white px-5 py-2.5 rounded-xl shadow-xl">
-            <span class="text-3xl font-bold font-display">1989</span>
-            <span class="block text-xs text-gold-400 font-medium tracking-wider uppercase">Fundação</span>
-          </div>
+
+          <p class="text-xs text-navy-500/50 text-center mt-2">Saulo de Deus Vieira (esq.) e Valder Caixeta dos Santos (dir.) na comemoração dos 30 anos da Sano — 2019</p>
         </div>
       </div>
 
@@ -215,21 +216,99 @@
       <div class="mt-20 lg:mt-28 reveal">
         <h3 class="text-center text-2xl font-bold font-display text-navy-500 mb-14">Marcos da nossa jornada</h3>
         <div class="relative">
-          <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-navy-200 hidden lg:block"></div>
-          <div class="grid lg:grid-cols-2 gap-6 lg:gap-12">
-            <div class="relative lg:text-right lg:pr-10 p-6 lg:p-0"><span class="text-gold-500 font-bold text-sm tracking-wider">1989</span><h4 class="text-xl font-bold text-navy-500 mt-1">Granja Abelhas</h4><p class="text-navy-500/60">Fundação com 50 matrizes suínas em 20 hectares, tornando-se UPL com produção de leitões até a creche.</p></div>
-            <div class="relative lg:pl-10 p-6 lg:p-0 lg:mt-[-20px]"><span class="text-gold-500 font-bold text-sm tracking-wider">1997</span><h4 class="text-xl font-bold text-navy-500 mt-1">Sano Alimentos LTDA</h4><p class="text-navy-500/60">Criação da empresa para comércio atacadista de carcaças suínas e bovinas. Na Granja Patinhas, implantada fábrica de rações que atende todas as unidades do grupo, balança rodoviária e silos graneleiros.</p></div>
-            <div class="relative lg:text-right lg:pr-10 p-6 lg:p-0"><span class="text-gold-500 font-bold text-sm tracking-wider">2001</span><h4 class="text-xl font-bold text-navy-500 mt-1">Distribuição de Carnes</h4><p class="text-navy-500/60">Início da comercialização de carcaças suínas e bovinas para açougues e varejistas da região.</p></div>
-            <div class="relative lg:pl-10 p-6 lg:p-0 lg:mt-[-20px]"><span class="text-gold-500 font-bold text-sm tracking-wider">2002</span><h4 class="text-xl font-bold text-navy-500 mt-1">Granja Esperança</h4><p class="text-navy-500/60">34 hectares — ciclo completo. 650 matrizes e 10.000 animais. Inclui 20 hectares de café irrigado.</p></div>
-            <div class="relative lg:text-right lg:pr-10 p-6 lg:p-0"><span class="text-gold-500 font-bold text-sm tracking-wider">2009</span><h4 class="text-xl font-bold text-navy-500 mt-1">Faz. Ribeirão da Mata</h4><p class="text-navy-500/60">40 hectares para confinamento bovino com currais modernos, balança eletrônica, tronco de embarque/desembarque e silos-trincheira para confinamento.</p></div>
-            <div class="relative lg:pl-10 p-6 lg:p-0 lg:mt-[-20px]"><span class="text-gold-500 font-bold text-sm tracking-wider">2014</span><h4 class="text-xl font-bold text-navy-500 mt-1">Distrito Industrial III</h4><p class="text-navy-500/60">Aquisição de 8.000 m² para futura indústria de carnes.</p></div>
-            <div class="relative lg:text-right lg:pr-10 p-6 lg:p-0"><span class="text-gold-500 font-bold text-sm tracking-wider">2015</span><h4 class="text-xl font-bold text-navy-500 mt-1">Granja Diamante</h4><p class="text-navy-500/60">Arrendamento — 330 matrizes e 3.500 animais em terminação. Totalmente reformada.</p></div>
-            <div></div>
+          <div class="relative">
+          <!-- Vertical line -->
+          <div class="absolute left-[7px] lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold-500 via-navy-500 to-gold-500 hidden lg:block"></div>
+          
+          <div class="relative">
+            <!-- 1989 -->
+            <div class="relative lg:w-1/2 lg:ml-0 lg:pr-12 lg:pb-24">
+              <div class="absolute left-0 top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-navy-500 rounded-full z-10 lg:hidden"></div>
+              <div class="hidden lg:block absolute right-[-9px] top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-white rounded-full z-10"></div>
+              <div class="pl-10 lg:pl-0 lg:pr-0">
+                <span class="text-gold-500 font-bold text-sm tracking-wider">1989</span>
+                <h4 class="text-xl font-bold text-navy-500 mt-1">Granja Abelhas</h4>
+                <p class="text-navy-500/60">Fundação com 50 matrizes suínas em 26,6 hectares, tornando-se UPL com produção de leitões até a creche.</p>
+              </div>
+            </div>
+
+            <!-- 1993 -->
+            <div class="relative lg:w-1/2 lg:ml-auto lg:pl-12 lg:-mt-28">
+              <div class="absolute left-0 top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-navy-500 rounded-full z-10 lg:hidden"></div>
+              <div class="hidden lg:block absolute left-[-9px] top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-white rounded-full z-10"></div>
+              <div class="pl-10 lg:pl-0">
+                <span class="text-gold-500 font-bold text-sm tracking-wider">1993</span>
+                <h4 class="text-xl font-bold text-navy-500 mt-1">Granja Patinhas</h4>
+                <p class="text-navy-500/60">Aquisição de 5 hectares para expansão, saltando de 50 para 110 matrizes — embrião do que se tornaria a recria-terminação.</p>
+              </div>
+            </div>
+
+            <!-- 1997 -->
+            <div class="relative lg:w-1/2 lg:ml-0 lg:pr-12 lg:pb-24">
+              <div class="absolute left-0 top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-navy-500 rounded-full z-10 lg:hidden"></div>
+              <div class="hidden lg:block absolute right-[-9px] top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-white rounded-full z-10"></div>
+              <div class="pl-10 lg:pl-0 lg:pr-0">
+                <span class="text-gold-500 font-bold text-sm tracking-wider">1997</span>
+                <h4 class="text-xl font-bold text-navy-500 mt-1">Sano Alimentos LTDA</h4>
+                <p class="text-navy-500/60">Criação da empresa para comércio atacadista de carcaças suínas e bovinas. Na Granja Patinhas (4,5 ha), implantada fábrica de rações que atende todas as unidades do grupo, balança rodoviária e silos graneleiros.</p>
+              </div>
+            </div>
+
+            <!-- 2001 -->
+            <div class="relative lg:w-1/2 lg:ml-auto lg:pl-12 lg:-mt-28">
+              <div class="absolute left-0 top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-navy-500 rounded-full z-10 lg:hidden"></div>
+              <div class="hidden lg:block absolute left-[-9px] top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-white rounded-full z-10"></div>
+              <div class="pl-10 lg:pl-0">
+                <span class="text-gold-500 font-bold text-sm tracking-wider">2001</span>
+                <h4 class="text-xl font-bold text-navy-500 mt-1">Distribuição de Carnes</h4>
+                <p class="text-navy-500/60">Início da comercialização de carcaças suínas e bovinas para açougues e varejistas da região.</p>
+              </div>
+            </div>
+
+            <!-- 2002 -->
+            <div class="relative lg:w-1/2 lg:ml-0 lg:pr-12 lg:pb-24">
+              <div class="absolute left-0 top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-navy-500 rounded-full z-10 lg:hidden"></div>
+              <div class="hidden lg:block absolute right-[-9px] top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-white rounded-full z-10"></div>
+              <div class="pl-10 lg:pl-0 lg:pr-0">
+                <span class="text-gold-500 font-bold text-sm tracking-wider">2002</span>
+                <h4 class="text-xl font-bold text-navy-500 mt-1">Granja Esperança</h4>
+                <p class="text-navy-500/60">58,1 hectares — ciclo completo. 650 matrizes e 10.000 animais. Inclui 40,68 hectares de café irrigado.</p>
+              </div>
+            </div>
+
+            <!-- 2009 -->
+            <div class="relative lg:w-1/2 lg:ml-auto lg:pl-12 lg:-mt-28">
+              <div class="absolute left-0 top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-navy-500 rounded-full z-10 lg:hidden"></div>
+              <div class="hidden lg:block absolute left-[-9px] top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-white rounded-full z-10"></div>
+              <div class="pl-10 lg:pl-0">
+                <span class="text-gold-500 font-bold text-sm tracking-wider">2009</span>
+                <h4 class="text-xl font-bold text-navy-500 mt-1">Faz. Ribeirão da Mata</h4>
+                <p class="text-navy-500/60">35,9 hectares para confinamento bovino com currais modernos, balança eletrônica, tronco de embarque/desembarque e silos-trincheira para confinamento.</p>
+              </div>
+            </div>
+<div class="relative lg:w-1/2 lg:ml-0 lg:pr-12 lg:pb-24">
+              <div class="absolute left-0 top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-navy-500 rounded-full z-10 lg:hidden"></div>
+              <div class="hidden lg:block absolute right-[-9px] top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-white rounded-full z-10"></div>
+              <div class="pl-10 lg:pl-0 lg:pr-0">
+                <span class="text-gold-500 font-bold text-sm tracking-wider">2012</span>
+                <h4 class="text-xl font-bold text-navy-500 mt-1">Sede Administrativa</h4>
+                <p class="text-navy-500/60">Construção da sede própria na Rua Negrinho de Freitas, 151 — centro de administração, frota e distribuição de carcaças para toda a região.</p>
+              </div>
+            </div>
+
+            <!-- 2014 -->
+            <div class="relative lg:w-1/2 lg:ml-auto lg:pl-12 lg:-mt-28">
+              <div class="absolute left-0 top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-navy-500 rounded-full z-10 lg:hidden"></div>
+              <div class="hidden lg:block absolute left-[-9px] top-2 w-[18px] h-[18px] bg-gold-500 border-4 border-white rounded-full z-10"></div>
+              <div class="pl-10 lg:pl-0">
+                <span class="text-gold-500 font-bold text-sm tracking-wider">2014</span>
+                <h4 class="text-xl font-bold text-navy-500 mt-1">Distrito Industrial III</h4>
+                <p class="text-navy-500/60">Aquisição de 8.000 m² para futura indústria de carnes.</p>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ============ UNIDADES ============ -->
   <section id="unidades" class="py-20 md:py-28 bg-navy-50/50">
@@ -243,34 +322,34 @@
         <div class="farm-card h-72 reveal reveal-d1" onclick="openLightbox('abelhas.jpg', 'Granja Abelhas — Produção de Leitões')">
           <img src="https://raw.githubusercontent.com/sanoalimentosltda-lgtm/site-sano-alimentos/main/fotos/abelhas.jpg" alt="Granja Abelhas — Produção de Leitões" loading="lazy" />
           <div class="farm-overlay"></div>
-          <div class="farm-content"><span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Desde 1989</span><h3 class="text-xl font-bold text-white mt-1">Granja Abelhas</h3><p class="farm-detail text-white/70 text-sm">Unidade de Produção de Leitões (UPL) — ~620 matrizes e 3.000 animais até a creche. Foi o marco inicial do grupo desde 1989.</p></div>
+          <div class="farm-content"><h3 class="text-xl font-bold text-white mt-1">Granja Abelhas</h3><p class="farm-detail text-white/70 text-sm">Unidade de Produção de Leitões (UPL) — ~620 matrizes e 3.000 animais até a creche. Foi o marco inicial do grupo desde 1989.</p></div>
         </div>
         <div class="farm-card h-72 reveal reveal-d2" onclick="openLightbox('patinhas.png', 'Granja Patinhas — Recria e Terminação')">
           <img src="https://raw.githubusercontent.com/sanoalimentosltda-lgtm/site-sano-alimentos/main/fotos/patinhas.png" alt="Granja Patinhas — Recria e Terminação" loading="lazy" />
           <div class="farm-overlay"></div>
-          <div class="farm-content"><span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Recria e Terminação</span><h3 class="text-xl font-bold text-white mt-1">Granja Patinhas</h3><p class="farm-detail text-white/70 text-sm">4.300 animais em recria e terminação. Conta com fábrica de rações própria que atende todas as unidades do grupo, balança rodoviária, 2 silos graneleiros (75 mil sacas) e unidade de secagem e pré-limpeza de grãos.</p></div>
+          <div class="farm-content"><h3 class="text-xl font-bold text-white mt-1">Granja Patinhas</h3><p class="farm-detail text-white/70 text-sm">4.300 animais em recria e terminação em 4,5 hectares. Conta com fábrica de rações própria que atende todas as unidades do grupo, balança rodoviária, 2 silos graneleiros (75 mil sacas) e unidade de secagem e pré-limpeza de grãos.</p></div>
         </div>
         <div class="farm-card h-72 reveal reveal-d3" onclick="openLightbox('esperanca.jpg', 'Granja Esperança — Ciclo Completo')">
           <img src="https://raw.githubusercontent.com/sanoalimentosltda-lgtm/site-sano-alimentos/main/fotos/esperanca.jpg" alt="Granja Esperança — Ciclo Completo" loading="lazy" />
           <div class="farm-overlay"></div>
-          <div class="farm-content"><span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Desde 2002</span><h3 class="text-xl font-bold text-white mt-1">Granja Esperança</h3><p class="farm-detail text-white/70 text-sm">34 hectares — ciclo completo. 650 matrizes e 10.000 animais em terminação, com lavouras de café irrigado.</p></div>
+          <div class="farm-content"><h3 class="text-xl font-bold text-white mt-1">Granja Esperança</h3><p class="farm-detail text-white/70 text-sm">58,1 hectares — ciclo completo. 650 matrizes e 10.000 animais em terminação, com lavouras de café irrigado (40,68 ha).</p></div>
         </div>
         <div class="farm-card h-72 reveal reveal-d1" onclick="openLightbox('ribeirao.jpg', 'Faz. Ribeirão da Mata — Confinamento Bovino')">
           <img src="https://raw.githubusercontent.com/sanoalimentosltda-lgtm/site-sano-alimentos/main/fotos/ribeirao.jpg" alt="Fazenda Ribeirão da Mata — Confinamento Bovino" loading="lazy" />
           <div class="farm-overlay"></div>
-          <div class="farm-content"><span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Desde 2009</span><h3 class="text-xl font-bold text-white mt-1">Faz. Ribeirão da Mata</h3><p class="farm-detail text-white/70 text-sm">40 hectares. Currais modernos, balança eletrônica, tronco de embarque/desembarque e silos-trincheira para confinamento bovino.</p></div>
+          <div class="farm-content"><h3 class="text-xl font-bold text-white mt-1">Faz. Ribeirão da Mata</h3><p class="farm-detail text-white/70 text-sm">35,9 hectares. Currais modernos, balança eletrônica, tronco de embarque/desembarque e silos-trincheira para confinamento bovino.</p></div>
         </div>
-        <div class="farm-card h-72 reveal reveal-d2">
-          <img src="https://images.unsplash.com/photo-1587213128862-80345e23a71a?w=600&q=80" alt="Granja Diamante — Terminação" loading="lazy" />
+                <div class="farm-card h-72 reveal reveal-d2" onclick="openLightbox('sede.jpg', 'Sede Administrativa — Sano Alimentos')">
+          <img src="https://raw.githubusercontent.com/sanoalimentosltda-lgtm/site-sano-alimentos/main/fotos/sede.jpg" alt="Sede Administrativa — Sano Alimentos" loading="lazy" />
           <div class="farm-overlay"></div>
-          <div class="farm-content"><span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Arrendada 2015</span><h3 class="text-xl font-bold text-white mt-1">Granja Diamante</h3><p class="farm-detail text-white/70 text-sm">330 matrizes e 3.500 animais em terminação. Totalmente reformada.</p></div>
+          <div class="farm-content"><h3 class="text-xl font-bold text-white mt-1">Sede Administrativa</h3><p class="farm-detail text-white/70 text-sm">Rua Negrinho de Freitas, 151 — centro administrativo, frota e distribuição de carcaças suínas e bovinas para clientes de Patos de Minas e região*.</p></div>
         </div>
         <div class="farm-card h-72 reveal reveal-d3" style="background: linear-gradient(135deg, #1a1a3e, #2d2d6b);">
           <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
             <svg class="w-10 h-10 text-gold-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
             <span class="text-xs text-gold-400 font-semibold tracking-widest uppercase">Autossuficiência</span>
             <h3 class="text-lg font-bold text-white mt-1">Lavouras</h3>
-            <p class="text-white/50 text-sm mt-1">700+ hectares com agricultura de precisão e parque próprio de máquinas</p>
+            <p class="text-white/50 text-sm mt-1">mais de 700 hectares arrendados com agricultura de precisão e parque próprio de máquinas</p>
             <span class="text-3xl font-bold font-display text-gold-400 mt-1">700+ ha</span>
           </div>
         </div>
@@ -287,29 +366,29 @@
         <p class="text-navy-500/60 max-w-2xl mx-auto mt-4">Da nutrição das lavouras à distribuição final, cada etapa é pensada para garantir a excelência.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <!-- Agricultura -->
-        <div class="reveal reveal-d1 bg-cream-100 rounded-2xl p-8 card-hover border border-cream-300 group">
-          <div class="w-12 h-12 bg-navy-500 rounded-xl flex items-center justify-center mb-5 group-hover:bg-gold-500 transition-colors">
-            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
-          </div>
-          <h3 class="text-xl font-bold text-navy-500 mb-2">Agricultura</h3>
-          <p class="text-navy-500/60 text-sm leading-relaxed">Agricultura de precisão em <strong class="text-navy-500/80">700+ hectares</strong> com parque próprio de máquinas, sem depender de equipamentos de terceiros, do preparo do solo à colheita com excelentes resultados comprovados.</p>
-        </div>
         <!-- Suinocultura -->
-        <div class="reveal reveal-d2 bg-cream-100 rounded-2xl p-8 card-hover border border-cream-300 group">
+        <div class="reveal reveal-d1 bg-cream-100 rounded-2xl p-8 card-hover border border-cream-300 group">
           <div class="w-12 h-12 bg-navy-500 rounded-xl flex items-center justify-center mb-5 group-hover:bg-gold-500 transition-colors">
             <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125V9M7.5 12h.75M12 12h.75M16.5 12h.75m-6 3.75h.75m3 0h.75M12 15.75h.75M7.5 18.75h3m3 0h3"/></svg>
           </div>
-          <div class="flex items-center gap-2 mb-3"><h3 class="text-xl font-bold text-navy-500">Suinocultura</h3><span class="px-2 py-0.5 bg-gold-500/20 text-gold-600 text-[10px] font-bold tracking-wider uppercase rounded-full">🏆 Agriness</span></div>
-          <p class="text-navy-500/60 text-sm leading-relaxed">Cerca de <strong class="text-navy-500/80">1.600 matrizes</strong> distribuídas em <strong class="text-navy-500/80">4 granjas</strong> (Abelhas, Patinhas, Esperança e Diamante) com alto padrão genético.</p>
+          <div class="mb-3"><h3 class="text-xl font-bold text-navy-500">Suinocultura</h3></div>
+          <p class="text-navy-500/60 text-sm leading-relaxed">Cerca de <strong class="text-navy-500/80">1.600 matrizes</strong> distribuídas em <strong class="text-navy-500/80">3 granjas</strong> (Abelhas, Patinhas e Esperança) com alto padrão genético.</p>
         </div>
         <!-- Bovinocultura -->
-        <div class="reveal reveal-d3 bg-cream-100 rounded-2xl p-8 card-hover border border-cream-300 group">
+        <div class="reveal reveal-d2 bg-cream-100 rounded-2xl p-8 card-hover border border-cream-300 group">
           <div class="w-12 h-12 bg-navy-500 rounded-xl flex items-center justify-center mb-5 group-hover:bg-gold-500 transition-colors">
             <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25"/></svg>
           </div>
           <h3 class="text-xl font-bold text-navy-500 mb-2">Bovinocultura</h3>
           <p class="text-navy-500/60 text-sm leading-relaxed">Plantel de <strong class="text-navy-500/80">800 a 1.000 reses</strong> em 600 hectares arrendados. Cerca de <strong class="text-navy-500/80">5.000 animais/ano</strong> comercializados.</p>
+        </div>
+        <!-- Agricultura -->
+        <div class="reveal reveal-d3 bg-cream-100 rounded-2xl p-8 card-hover border border-cream-300 group">
+          <div class="w-12 h-12 bg-navy-500 rounded-xl flex items-center justify-center mb-5 group-hover:bg-gold-500 transition-colors">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-navy-500 mb-2">Agricultura</h3>
+          <p class="text-navy-500/60 text-sm leading-relaxed">Agricultura de precisão em <strong class="text-navy-500/80">mais de 700 hectares</strong> arrendados, com parque próprio de máquinas, sem depender de equipamentos de terceiros, do preparo do solo à colheita com excelentes resultados comprovados.</p>
         </div>
         <!-- Distribuição -->
         <div class="reveal reveal-d4 bg-cream-100 rounded-2xl p-8 card-hover border border-cream-300 group">
@@ -329,7 +408,7 @@
       <div class="text-center mb-16 reveal">
         <span class="section-tag">Ciclo Produtivo</span>
         <h2 class="section-title">A <span class="text-gold-500">suinocultura</span> do início ao fim</h2>
-        <p class="text-navy-500/60 max-w-2xl mx-auto mt-4">Da maternidade à distribuição, a Sano controla cada etapa com excelência — um dos motivos de ser eleita a 2ª melhor do Brasil.</p>
+        <p class="text-navy-500/60 max-w-2xl mx-auto mt-4">Da maternidade à distribuição, a Sano controla cada etapa com excelência — da produção à entrega, tudo passa pelo nosso padrão de qualidade.</p>
       </div>
       <div class="grid md:grid-cols-4 gap-4">
         <div class="reveal reveal-d1 bg-white rounded-2xl p-6 text-center card-hover border border-cream-300">
@@ -354,7 +433,7 @@
           </div>
           <span class="text-xs text-gold-500 font-bold tracking-widest uppercase">Fase 3</span>
           <h3 class="text-lg font-bold text-navy-500 mt-1">Terminação</h3>
-          <p class="text-navy-500/60 text-sm mt-2">Granjas Patinhas e Diamante — fase final de engorda para abate. A Granja Esperança opera em ciclo completo, da reprodução à terminação na mesma propriedade.</p>
+          <p class="text-navy-500/60 text-sm mt-2">Granja Patinhas — fase final de engorda para abate. A Granja Esperança opera em ciclo completo, da reprodução à terminação na mesma propriedade.</p>
         </div>
         <div class="reveal reveal-d4 bg-white rounded-2xl p-6 text-center card-hover border border-cream-300">
           <div class="w-14 h-14 bg-navy-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -365,33 +444,41 @@
           <p class="text-navy-500/60 text-sm mt-2">Sano Alimentos LTDA — comercialização de carcaças suínas e bovinas para açougues e varejistas.</p>
         </div>
       </div>
-      <div class="text-center mt-10 reveal">
-        <span class="inline-block px-4 py-2 bg-navy-500 text-gold-400 text-sm font-semibold rounded-full">🏆 2ª melhor Suinocultura do Brasil — Agriness</span>
-      </div>
+      
     </div>
   </section>
 
   <!-- ============ INFRAESTRUTURA ============ -->
-  <section class="py-16 md:py-20 bg-navy-500">
+  
+
+
+  <!-- ============ PREMIOS ============ -->
+  <section class="py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="reveal bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-          <div class="flex items-center gap-4 mb-5">
-            <div class="w-14 h-14 bg-gold-500/20 rounded-xl flex items-center justify-center">
-              <svg class="w-7 h-7 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
-            </div>
-            <div><h3 class="text-xl font-bold text-white">Frota</h3><p class="text-white/50 text-sm">Logística própria</p></div>
+<div class="reveal reveal-d2 mt-16">
+        <span class="section-tag">Premios e Reconhecimentos</span>
+        <h3 class="text-2xl md:text-3xl font-bold font-display text-navy-500 mt-4 mb-8">Ranking Agriness</h3>
+        <div class="max-w-2xl mx-auto">
+          <div class="grid grid-cols-3 gap-4 bg-navy-500 text-white rounded-2xl p-4 text-sm font-semibold">
+            <div class="text-left">Edicao</div>
+            <div class="text-center">Ano</div>
+            <div class="text-right">Classificacao</div>
           </div>
-          <p class="text-white/70 leading-relaxed">Contamos com <strong class="text-white">16 caminhões</strong>, alguns com baús frigoríficos, outros para transporte de animais vivos e máquinas agrícolas — garantindo autonomia e qualidade em toda a cadeia logística. Somos <strong class="text-white">destaque no ramo de alimentos</strong>, uma empresa ecologicamente correta e ostentamos <strong class="text-white">baixíssima taxa de rotação de funcionários</strong>, cumprindo pontualmente todos os compromissos trabalhistas, fiscais e operacionais.</p>
-        </div>
-        <div class="reveal bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-          <div class="flex items-center gap-4 mb-5">
-            <div class="w-14 h-14 bg-gold-500/20 rounded-xl flex items-center justify-center">
-              <svg class="w-7 h-7 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
-            </div>
-            <div><h3 class="text-xl font-bold text-white">Distrito Industrial III</h3><p class="text-white/50 text-sm">Projetos futuros</p></div>
+          <div class="grid grid-cols-3 gap-4 border-b border-cream-300 py-4 text-navy-500/80">
+            <div class="text-left font-semibold">9ª</div>
+            <div class="text-center">2016</div>
+            <div class="text-right"><span class="inline-block bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold">2° Lugar - Brasil</span><br><span class="text-xs text-navy-500/50">501 a 1000 matrizes</span></div>
           </div>
-          <p class="text-white/70 leading-relaxed">Em <strong class="text-white">2014</strong> adquirimos <strong class="text-white">8.000 m²</strong> no Distrito Industrial III, em Patos de Minas, onde planejamos instalar câmaras frias e implantar uma indústria de carnes e derivados — o futuro do setor.</p>
+          <div class="grid grid-cols-3 gap-4 border-b border-cream-300 py-4 text-navy-500/80">
+            <div class="text-left font-semibold">11ª</div>
+            <div class="text-center">2018</div>
+            <div class="text-right"><span class="inline-block bg-gold-100 text-gold-800 px-3 py-1 rounded-full text-xs font-bold">1° Lugar - Brasil</span><br><span class="text-xs text-navy-500/50">Ate 300 matrizes</span></div>
+          </div>
+          <div class="grid grid-cols-3 gap-4 py-4 text-navy-500/80">
+            <div class="text-left font-semibold">14ª</div>
+            <div class="text-center">2021</div>
+            <div class="text-right"><span class="inline-block bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold">2° Lugar - Brasil</span><br><span class="text-xs text-navy-500/50">501 a 1000 matrizes</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -401,7 +488,7 @@
   <section class="py-20 md:py-28">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="reveal">
-        <span class="section-tag">Vídeo Institucional &amp; Prêmios</span>
+        <span class="section-tag">Vídeo Institucional</span>
         <h2 class="section-title">Conheça a <span class="text-gold-500">Sano Alimentos</span></h2>
         <p class="text-navy-500/60 mt-4 mb-10 max-w-xl mx-auto">Assista ao nosso vídeo e veja de perto a história, as operações e a equipe que fazem da Sano uma referência.</p>
       </div>
@@ -436,13 +523,13 @@
       </div>
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
         <div class="reveal">
-          <form id="contato-form" class="space-y-5" onsubmit="return handleSubmit(event)">
+          <form id="contato-form" class="space-y-5" action="https://formsubmit.co/controladoria@sanoalimentos.com.br" method="POST">
             <div class="grid sm:grid-cols-2 gap-5">
-              <div><input type="text" id="nome" required class="form-input" placeholder="Seu nome" /></div>
-              <div><input type="email" id="email" required class="form-input" placeholder="seu@email.com" /></div>
+              <div><input type="text" id="nome" name="nome" required class="form-input" placeholder="Seu nome" /></div>
+              <div><input type="email" id="email" required class="form-input" placeholder="seu@email.com" name="email" /></div>
             </div>
-            <select id="assunto" class="form-input"><option value="">Assunto</option><option value="produtos">Quero saber sobre produtos</option><option value="parceria">Proposta de parceria</option><option value="visita">Agendar visita</option><option value="outro">Outro</option></select>
-            <textarea id="mensagem" rows="4" required class="form-input resize-none" placeholder="Sua mensagem..."></textarea>
+            <select id="assunto" name="assunto" class="form-input"><option value="">Assunto</option><option value="produtos">Quero saber sobre produtos</option><option value="parceria">Proposta de parceria</option><option value="visita">Agendar visita</option><option value="outro">Outro</option></select>
+            <textarea id="mensagem" name="mensagem" rows="4" required class="form-input resize-none" placeholder="Sua mensagem..."></textarea>
             <button type="submit" class="btn-primary w-full justify-center">Enviar mensagem <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg></button>
             <p id="form-feedback" class="text-sm text-center hidden"></p>
           </form>
@@ -472,14 +559,16 @@
         </div>
       </div>
     </div>
-  </section>
+  
+      
+</section>
 
   <!-- ============ FOOTER ============ -->
   <footer class="bg-navy-500 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <div class="grid md:grid-cols-4 gap-10">
         <div class="md:col-span-2 lg:col-span-1">
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-SLToWslbVB-2Y8ACLgHMOXKRtgboRyfe7VlEuok-oH22z3zbLXyfbi-M_UpSn8u00mG9dxpK5DWQ3FCN-0hGlBvkVNE4umhsQ-WOaUCk0yo1dTwROUBEspOBBpyqbdgTwtWK0EDNQLjD/s1094/aaaaaaaaaa.png" alt="Sano Alimentos" style="filter:drop-shadow(0 0 6px rgba(255,255,255,0.15))" class="h-10 w-auto mb-4" />
+          <img src="fotos/logo_sano.png" alt="Sano Alimentos"  class="h-10 w-auto mb-4" />
           <p class="text-white/50 text-sm">Tradição e qualidade no agronegócio desde 1989. Da lavoura à sua mesa.</p>
         </div>
         <div><h4 class="text-xs font-semibold text-gold-400 tracking-widest uppercase mb-4">Navegação</h4>
@@ -490,15 +579,13 @@
         </div>
         <div><h4 class="text-xs font-semibold text-gold-400 tracking-widest uppercase mb-4">Redes</h4>
           <div class="flex gap-3">
-            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-gold-500 rounded-xl flex items-center justify-center transition-all" aria-label="Instagram"><svg class="w-5 h-5 text-white/50" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-gold-500 rounded-xl flex items-center justify-center transition-all" aria-label="Facebook"><svg class="w-5 h-5 text-white/50" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-gold-500 rounded-xl flex items-center justify-center transition-all" aria-label="WhatsApp"><svg class="w-5 h-5 text-white/50" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            <a href="https://wa.me/553438219928" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/5 hover:bg-gold-500 rounded-xl flex items-center justify-center transition-all" aria-label="WhatsApp"><svg class="w-5 h-5 text-white/50" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
           </div>
         </div>
       </div>
       <div class="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
         <p class="text-white/30 text-sm">&copy; 2026 Sano Alimentos LTDA. Todos os direitos reservados.</p>
-        <p class="text-white/20 text-xs">Patos de Minas — MG</p>
+        <p class="text-white/20 text-xs">Patos de Minas — MG</p><p class="text-white/10 text-[10px] mt-1">Site v1.0</p>
       </div>
     </div>
   </footer>
@@ -537,6 +624,7 @@
     })();
   </script>
 
+
   <!-- ============ LIGHTBOX ============ -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close-lightbox">&times;</span>
@@ -563,6 +651,5 @@
   });
   </script>
 
-</body>
+  </body>
 </html>
-<!-- Placeholder para identificar onde inserir as alterações -->

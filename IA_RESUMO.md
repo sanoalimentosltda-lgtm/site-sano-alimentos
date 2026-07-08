@@ -131,3 +131,42 @@ O lightbox parou de funcionar corretamente (imagem aparecia minúscula ou tela p
 - `a3543df` — Último commit ANTES do bug (lightbox funcionando)
 - `b9d04df` — Commit onde o bug foi INTRODUZIDO (timeline quebrou o DOM)
 - `218e490` — Commit onde o bug foi CORRIGIDO
+
+
+## 📋 Proximas Implementacoes
+
+### Timeline Evolutiva "Antes vs Hoje" (Opcao 2 - Accordion)
+**Status:** Aguardando coleta de dados
+**Prioridade:** Media
+
+**Descricao:** Transformar a timeline "Marcos da nossa jornada" em uma estrutura expansivel. Cada marco da timeline mostra o passado (como esta atualmente) e, ao clicar/expandir, revela os dados atuais daquela unidade.
+
+**Estrutura visual:**
+- Mantem o layout alternado (direita/esquerda) com linha vertical central
+- Cada marco tem um indicador ▶ para expandir
+- Ao clicar, abre um card interno com:
+  - Foto atual da unidade
+  - Dados comparativos (ex: "50 matrizes → 620 matrizes")
+  - Estatisticas atuais
+- Animacao suave ao abrir/fechar
+
+**Dados necessarios a coletar por unidade:**
+1. Granja Abelhas (1989) — antes: 50 matrizes, 26,6ha → hoje: ~620 matrizes, 3.000 animais
+2. Granja Patinhas (1993) — antes: 5ha, salto 50→110 matrizes → hoje: 4.300 animais, fabrica de racoes, silos
+3. Sano Alimentos LTDA (1997) — antes: criacao da empresa → hoje: distribuicao atacadista
+4. Granja Esperanca (2002) — antes: 58,1ha, 650 matrizes → hoje: + cafe irrigado 40,68ha
+5. Fazenda Ribeirao da Mata (2009) — antes: 35,9ha confinamento → hoje: currais modernos
+6. Sede Administrativa (2012) — hoje: Rua Negrinho de Freitas, 151
+7. Distrito Industrial III (2014) — hoje: 8.000m² para futura industria
+
+**Implementacao tecnica:**
+- Cada item da timeline vira um accordion com `onclick`
+- Conteudo expandido usa CSS `max-height` + transicao ou `display: none/block` com animacao
+- Fotos atuais ja estao no repositorio (/fotos/)
+- Manter estrutura de grid alternada (lg:ml-0/lg:ml-auto)
+
+**Commits de referencia:** a3543df (timeline funcionando), b9d04df (timeline quebrada), 218e490 (correcao do DOM)
+
+---
+
+**Observacao:** Nao esquecer de verificar o balanceamento de tags HTML ao modificar a timeline!
